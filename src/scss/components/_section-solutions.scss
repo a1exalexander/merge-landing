@@ -1,0 +1,47 @@
+$style: section-solutions;
+
+.#{$style} {
+  padding: 80px 64px 112px;
+    @include media {
+      padding:80px 88px 112px;
+    }
+  &__title {
+    text-align: center;
+    @include text($H32, 700, $N13);
+    margin-bottom: 82px;
+  }
+  &__list-wrapper {
+    max-width: 100%;
+    @include media($screen-tablet) {
+      @include flex(space-between);
+    }
+  }
+  &__list {
+    @include media($screen-tablet) {
+      flex: 1 1;
+      &:not(:last-of-type) {
+        margin-right: 32px;
+      }
+    }
+    @include media() {
+      &:not(:last-of-type) {
+        margin-right: 64px;
+      }
+    }
+    @include media($screen-hd) {
+      &:not(:last-of-type) {
+        margin-right: 112px;
+      }
+    }
+    
+  }
+  &__item {
+    margin-bottom: 72px;
+    @include media($screen-tablet) {
+      margin-bottom: 0;
+      &:not(:last-of-type) {
+        margin-bottom: 72px;
+      }
+    }
+  }
+}

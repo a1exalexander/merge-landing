@@ -1,0 +1,69 @@
+$style: section-services;
+
+.#{$style} {
+  padding: 26% 0 112px;
+  @include media($screen-tablet) {
+    padding: 20% 0 112px;
+    text-align: center;
+  }
+  &__title {
+    @include text($H22, 700, $N13);
+    margin-bottom: 16px;
+    @include media($screen-tablet-small) {
+      font-size: $H24;
+    }
+    @include media($screen-tablet-large) {
+      font-size: $H32;
+    }
+  }
+  &__subtitle {
+    @include text($H16, 400, $N13);
+    margin-bottom: 58px;
+    @include media($screen-tablet-small) {
+      font-size: $H17;
+    }
+    @include media($screen-tablet-large) {
+      font-size: $H18;
+    }
+  }
+  &__list {
+    list-style: none;
+    @include flex-col(space-between);
+    @include media($screen-tablet-small) {
+      flex-direction: row;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      margin: 0 -16px;
+    }
+    @include media($screen-netbook) {
+      justify-content: center;
+    }
+    @include media() {
+      justify-content: space-between;
+      flex-wrap: nowrap;
+      margin: 0;
+    }
+  }
+  &__item {
+    @include media($screen-tablet-small) {
+      flex: 0 0 calc(50% - 32px);
+      margin: 0 16px;
+      padding-right: 32px;
+    }
+    @include media($screen-netbook) {
+      flex: 0 0 calc(33.3% - 32px);
+      margin: 0 16px;
+    }
+    @include media() {
+      flex: 1 1;
+      margin: 0;
+    }
+    
+    &:not(:last-of-type) {
+      margin-bottom: 32px;
+      @include media() {
+        margin-bottom: 0;
+      }
+    }
+  }
+}

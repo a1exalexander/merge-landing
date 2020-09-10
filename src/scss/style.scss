@@ -1,0 +1,29 @@
+// @import './fonts/gilroy';
+@import './core/vars';
+@import './core/mixins';
+@import './core/grid';
+@import './core/common';
+
+// Common comonent
+@import './components/link';
+@import './components/button';
+@import './components/divider';
+@import './components/scroll-backdrop';
+
+// Dependencies
+@import './components/location-marker';
+@import './components/background-map';
+@import './components/service-card';
+@import './components/expertise-card';
+@import './components/solution-card';
+@import './components/comments-slider';
+
+// Page Components
+@import './components/header';
+@import './components/footer';
+@import './components/section-hero';
+@import './components/section-services';
+@import './components/section-expertise';
+@import './components/section-solutions';
+@import './components/section-dribble';
+@import './components/section-comments';

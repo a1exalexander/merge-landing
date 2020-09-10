@@ -1,0 +1,40 @@
+$style: section-comments;
+
+.#{$style} {
+  padding: 100px 64px 90px;
+  text-align: center;
+  @include media($screen-netbook) {
+    text-align: left;
+    @include flex(space-between);
+  }
+  @include media {
+    padding: 100px 88px 90px;
+  }
+  &__title-wrapper {
+    flex: 0 0;
+    @include media($screen-netbook) {
+      padding-top: 115px;
+      margin-right: 140px;
+    }
+  }
+  &__title {
+    @include text($H32, 700, $N13);
+    @include media($screen-netbook) {
+      width: 270px;
+    }
+  }
+  &__content-wrapper {
+    overflow: hidden;
+    flex: 1 1;
+    padding-left: 32px;
+  }
+  &__slider {
+    margin: 0 0 0 -32px;
+  }
+  &__border {
+    display: block;
+    height: 1px;
+    width: 100%;
+    background-color: $N2;
+  }
+}

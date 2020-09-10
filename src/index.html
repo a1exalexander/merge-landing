@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+    <!-- Links to styles -->
+    ${require('./partials/head-styles.html')}
+
+    <!-- SEO -->
+    ${require('./partials/head-seo.html')}
+  </head>
+
+  <body>
+    ${require('./partials/scroll-backdrop.html')}
+    ${require('./partials/seo-title.html')}
+
+    <!-- Template -->
+    ${require('./partials/header.html')}
+    <main class="main overflow-fix">
+      ${require('./partials/section-hero.html')}
+      ${require('./partials/section-services.html')}
+      ${require('./partials/section-expertise.html')}
+      ${require('./partials/section-solutions.html')}
+      ${require('./partials/section-dribble.html')}
+      ${require('./partials/section-comments.html')}
+    </main>
+    ${require('./partials/footer.html')}
+
+    <!-- SVG icons -->
+    ${require('./partials/svg.html')}
+
+    <!-- Scripts -->
+    ${require('./partials/body-scripts.html')}
+  </body>
+</html>

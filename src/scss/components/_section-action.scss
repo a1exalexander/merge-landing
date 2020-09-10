@@ -1,0 +1,12 @@
+$style: section-action;
+
+.#{$style} {
+  padding: 128px 0;
+  background-color: $N13;
+  text-align: center;
+  &__title {
+    max-width: 490px;
+    @include text($H40, 700, $N0);
+    margin: 0 auto 58px;
+  }
+}

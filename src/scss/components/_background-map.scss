@@ -1,0 +1,56 @@
+$style: background-map;
+
+.#{$style} {
+  position: absolute;
+  left: 0;
+  right: 0;
+  width: 100%;
+  pointer-events: none;
+  z-index: 0;
+  &__image-wrapper{
+    pointer-events: none;
+    @include padding-hack(40%, cover);
+  }
+  &__image {
+    object-position: left center;
+    z-index: -1;
+  }
+  &__location-marker {
+    pointer-events: all;
+    left: 22%;
+    top: 6%;
+    @include media($screen-tablet-small) {
+      left: 29%;
+    }
+    @include media($screen-tablet) {
+      top: 10%;
+      left: 31%;
+    }
+    @include media($screen-tablet-large) {
+      top: 11%;
+      left: 32%;
+    }
+    @include media($screen-netbook) {
+      top: 13%;
+      left: 33%;
+    }
+    @include media {
+      top: 14%;
+      left: 34%;
+    }
+    @include media($screen-desktop-large) {
+      left: 35%;
+    }
+    @include media($screen-hd) {
+      top: 15%;
+      left: 36%;
+    }
+    @include media($screen-fullhd) {
+      top: 16%;
+      left: 37%;
+    }
+    @include media($screen-retina) {
+      left: 38%;
+    }
+  }
+}

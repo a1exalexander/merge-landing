@@ -1,0 +1,87 @@
+$style: link;
+
+.#{$style} {
+  white-space: nowrap;
+  text-decoration: none;
+  outline: none;
+  border: none;
+  background-color: transparent;
+  @include text($H16, 500, $G5);
+  line-height: 1.4;
+  @include transition(filter);
+  @include flex(center, center);
+  display: inline-flex;
+  svg {
+    @include svg(17px, $G5);
+    margin-left: 12px;
+    position: relative;
+    bottom: -1px;
+  }
+  @include media() {
+    display: inline-block;
+    position: relative;
+    &:after {
+      content: '';
+      display: block;
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      width: 0;
+      height: 1px;
+      @include transition(width, filter);
+      background-color: $G5;
+    }
+    &:hover {
+      filter: brightness(1.1);
+      &:after {
+        width: 100%;
+      }
+    }
+  }
+  &:active {
+    filter: brightness(0.9);
+  }
+  &--black {
+    color: $N13;
+    @include media() {
+      &:after {
+        background-color: $N13;
+      }
+    }
+  }
+  &--white {
+    color: $N0;
+    @include media() {
+      &:after {
+        background-color: $N0;
+      }
+    }
+  }
+  &--icon {
+    padding: 2px;
+    &:after {
+      content: none;
+    }
+    @include media {
+      &:hover {
+        svg {
+          transform: scale(1.1);
+          fill: $G5;
+        }
+      }
+    }
+    &:active {
+      svg {
+        transform: scale(0.9);
+      }
+    }
+    svg {
+      margin-left: 0;
+      @include svg(20px, $N0);
+      @include transition(filter, fill, transform);
+      position: relative;
+      bottom: 0;
+    }
+  }
+}

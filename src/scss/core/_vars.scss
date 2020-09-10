@@ -1,0 +1,86 @@
+:root {
+  --N0: #ffffff;
+  --N0-2: #fdffff;
+  --N1: #f7f8f9;
+  --N2: #eff0f1;
+  --N2-2: #EBECF0;
+  --N2-3: #e2e3e3;
+  --N3: #dbdcde;
+  --N9: #3e4045;
+  --N10: #22252c;
+  --N13: #000000;
+  --G5: #37cdab;
+  --H40: 2.5rem;
+  --H32: 2rem;
+  --H30: 1.875rem;
+  --H24: 1.5rem;
+  --H22: 1.375rem;
+  --H20: 1.25rem;
+  --H19: 1.1875rem;
+  --H18: 1.125rem;
+  --H17: 1.0625rem;
+  --H16: 1rem;
+  --H15: 0.9375rem;
+  --H14: 0.875rem;
+  --H13: 0.8125rem;
+  --H12: 0.75rem;
+  --H11: 0.6875rem;
+  --H10: 0.625rem;
+  --H9: 0.5625rem;
+  --base-font: 'Gilroy', sans-serif;
+  --secondary-font: 'SF', sans-serif;
+  --x-offset: 64px;
+}
+
+// Grid
+$x-offset: 64px;
+
+// Colors
+$N0: var(--N0);
+$N0-2: var(--N0-2);
+$N1: var(--N1);
+$N2: var(--N2);
+$N2-2: var(--N2-2);
+$N2-3: var(--N2-3);
+$N3: var(--N3);
+$N9: var(--N9);
+$N10: var(--N10);
+$N13: var(--N13);
+$G5: var(--G5);
+
+// Font size
+$H40: var(--H40);
+$H32: var(--H32);
+$H30: var(--H30);
+$H24: var(--H24);
+$H22: var(--H22);
+$H20: var(--H20);
+$H19: var(--H19);
+$H18: var(--H18);
+$H17: var(--H17);
+$H16: var(--H16);
+$H15: var(--H15);
+$H14: var(--H14);
+$H13: var(--H13);
+$H12: var(--H12);
+$H11: var(--H11);
+$H10: var(--H10);
+$H9: var(--H9);
+
+// Fonts
+$base-font: var(--base-font);
+$secondary-font: var(--secondary-font);
+
+/* Screens */
+$screen-iphone-5: 320px;
+$screen-iphone-6: 375px;
+$screen-iphone-plus: 414px;
+$screen-tablet-small: 600px;
+$screen-tablet: 768px;
+$screen-tablet-large: 860px;
+$screen-netbook: 960px;
+$screen-desktop: 1024px;
+$screen-desktop-large: 1280px;
+$screen-hd: 1366px;
+$screen-fullhd: 1440px;
+$screen-retina: 1660px;

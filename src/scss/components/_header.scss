@@ -1,0 +1,71 @@
+$style: header;
+@keyframes dash {
+  0% {
+    stroke-dashoffset: 1000;
+    fill: transparent;
+    stroke: $N13;
+  }
+  5% {
+    fill: transparent;
+    stroke: $N13;
+  }
+  15% {
+    fill: $N13;
+  }
+  20% {
+    stroke: transparent;
+  }
+  30% {
+    stroke: none;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+.#{$style} {
+  padding: 18px 0;
+  position: sticky;
+  @include flex(space-between, center);
+  &__list {
+    list-style: none;
+    @include flex(flex-start, center);
+  }
+  &__item {
+    &:not(:last-of-type) {
+      margin-right: 32px;
+    }
+    &--not-mobile {
+      display: none;
+      @include media($screen-tablet-small) {
+        display: inline-block;
+      }
+    }
+  }
+  &__logo {
+    stroke: none;
+    stroke-dasharray: 1000;
+    animation-name: dash;
+    animation-duration: 20s;
+    height: 24px;
+    width: 215px;
+
+    &--mobile {
+      width: 124px;
+      height: 25px;
+      @include media($screen-tablet-small) {
+        display: none;
+      }
+    }
+    &--desktop {
+      width: 215px;
+      display: none;
+      @include media($screen-tablet-small) {
+        display: block;
+      }
+    }
+  }
+  &__logo-wrapper {
+    @include flex(center, center);
+    display: inline-flex;
+  }
+}

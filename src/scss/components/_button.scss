@@ -1,0 +1,49 @@
+$style: button;
+
+.#{$style} {
+  text-decoration: none;
+  outline: none;
+  border: none;
+  background-color: transparent;
+  @include text($H16, 500, $N13);
+  border-radius: 2px;
+  padding: 16px 48px;
+  display: inline-block;
+  background-color: $G5;
+  cursor: pointer;
+  text-align: center;
+  @include transition(filter, border-color, color, background-color);
+  @include media {
+    &:hover {
+      filter: brightness(1.1);
+    }
+  }
+  &:active {
+    filter: brightness(0.9);
+  }
+  &--outlined {
+    background-color: transparent;
+    border: 1px solid $G5;
+    color: $G5;
+    padding: 12px 24px;
+  }
+  &--black {
+    border-color: $N13;
+    color: $N13;
+    @include media {
+      &:hover {
+        border-color: $G5;
+        color: $G5;
+      }
+    }
+  }
+  &--fluid {
+    width: 100%;
+  }
+  &--fluid-mobile {
+    width: 100%;
+    @include media($screen-tablet-small) {
+      width: initial;
+    }
+  }
+}

@@ -1,0 +1,17 @@
+$style: scroll-backdrop;
+
+.#{$style} {
+  position: fixed;
+  height: 50vh;
+  left: 0;
+  right: 0;
+  z-index: -1;
+  &--top {
+    top: 0;
+    background-color: $N0;
+  }
+  &--bottom {
+    bottom: 0;
+    background-color: $N13;
+  }
+}

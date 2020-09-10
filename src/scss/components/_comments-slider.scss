@@ -1,0 +1,88 @@
+$style: comments-slider;
+
+.#{$style} {
+  &__slide {
+    padding: 24px 0 24px 32px;
+    height: 330px;
+    @include flex-col(space-between);
+    display: flex !important;
+  }
+  &__slide-head {
+    position: relative;
+  }
+  &__icon-quotes {
+    position: absolute;
+    top: 74px;
+    z-index: -1;
+    left: -32px;
+  }
+  &__controll {
+    border-top: 1px solid $N2;
+    padding-top: 16px;
+    @include flex(space-between, center);
+  }
+  &__company {
+    @include text($H18, 400, $N10);
+    margin-bottom: 72px;
+  }
+  &__comment {
+    @include text($H24, 400, $N13);
+    line-height: 1.5;
+  }
+  &__author {
+    @include text($H18, 600, $N10);
+    &--thin {
+      font-weight: 400;
+    }
+  }
+  &__dots {
+    ul {
+      @include flex(flex-start, center);
+    }
+    li {
+      &:not(:last-of-type) {
+        margin-right: 8px;
+      }
+      button {
+        outline: none;
+        border: none;
+        font-size: 0;
+        text-indent: -9999px;
+        overflow: hidden;
+        border-radius: 50%;
+        @include size(10px);
+        background-color: $N2;
+        @include transition(background-color);
+      }
+    }
+    li.slick-active button {
+      background-color: $N13;
+    }
+  }
+  &__arrow {
+    outline: none;
+    background-color: transparent;
+    border: none;
+    @include flex(flex-start, center);
+    @include media {
+      &:hover {
+        .#{$style}__arrow-icon {
+          transform: scaleX(0.8);
+        }
+      }
+    }
+    &:active {
+      .#{$style}__arrow-icon {
+        transform: scaleX(0.9);
+      }
+    }
+  }
+  &__arrow-text {
+    @include text($H18, 500, $N13);
+    margin-right: 18px;
+  }
+  &__arrow-icon {
+    @include transition(transform);
+    transform-origin: left center;
+  }
+}

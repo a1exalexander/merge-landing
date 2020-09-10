@@ -1,0 +1,146 @@
+$style: footer;
+
+@keyframes wave {
+  0% {
+    transform: translateY(-40%);
+  }
+  50% {
+    transform: translateY(40%);
+  }
+  100% {
+    transform: translateY(-40%);
+  }
+}
+
+.#{$style} {
+  background-color: $N13;
+  &__head {
+    padding: 128px 0;
+    border-bottom: 1px solid $N9;
+    text-align: center;
+    position: relative;
+  }
+  &__title {
+    max-width: 490px;
+    @include text($H40, 700, $N0);
+    margin: 0 auto 58px;
+  }
+  &__footer {
+    padding: 57px 0;
+    @include flex(space-between);
+  }
+  &__contacts {
+    flex: 1 1;
+    @include flex-col(space-between, flex-start);
+  }
+  &__logo-wrapper {
+    margin-bottom: 49px;
+  }
+  &__logo {
+    width: 214px;
+    height: 24px;
+    fill: $N0;
+  }
+  &__links {
+    flex: 1 1;
+    @include flex(space-between);
+    &:not(:last-of-type) {
+      margin-right: 24px;
+    }
+  }
+  &__item {
+    &:not(:last-of-type) {
+      margin-bottom: 20px;
+    }
+  }
+  &__col {
+    
+    @include flex-col(flex-start, flex-start);
+    
+    &--fluid {
+      flex: 1 1;
+    }
+    &--download {
+      flex: 1 1;
+      align-items: center;
+      margin: 0 6%;
+    }
+    &--mr {
+      margin-right: 24px;
+    }
+  }
+  &__col-wrapper {
+    flex: 1 1;
+    @include flex(space-between,  flex-start);
+  }
+  &__circle-icon {
+    background-color: #2acce2;
+    display: block;
+    @include size(20px);
+    border-radius: 50%;
+  }
+  &__icon {
+    position: absolute;
+    & > * {
+      display: inline-block;
+      animation-name: wave;
+      animation-duration: 3s;
+      animation-iteration-count: infinite;
+      animation-timing-function: ease-in-out;
+    }
+    &:nth-child(1) {
+      left: 0;
+      top: 176px;
+    }
+    &:nth-child(2) {
+      left: 14%;
+      top: 57px;
+      & > * {
+        animation-delay: 200ms;
+      }
+    }
+    &:nth-child(3) {
+      left: 16%;
+      top: 339;
+      & > * {
+        animation-delay: 400ms;
+      }
+    }
+    &:nth-child(4) {
+      right: 8%;
+      top: 67px;
+      & > * {
+        animation-delay: 600ms;
+      }
+    }
+    &:nth-child(5) {
+      right: 16%;
+      top: 309px;
+      & > * {
+        animation-delay: 800ms;
+      }
+    }
+    &:nth-child(6) {
+      right: 0;
+      top: 318px;
+      & > * {
+        animation-delay: 1000ms;
+      }
+    }
+    &:nth-child(7) {
+      right: 30%;
+      top: 57px;
+      & > * {
+        animation-delay: 1200ms;
+      }
+    }
+  }
+  &__social {
+    @include flex(flex-start, center);
+  }
+  &__social-item {
+    &:not(:last-of-type) {
+      margin-right: 18px;
+    }
+  }
+}
