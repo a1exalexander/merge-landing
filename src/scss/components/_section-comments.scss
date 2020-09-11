@@ -1,8 +1,11 @@
 $style: section-comments;
 
 .#{$style} {
-  padding: 100px 64px 90px;
+  padding: 45px 16px 56px;
   text-align: center;
+  @include media($screen-tablet-large) {
+    padding: 100px 32px 90px;
+  }
   @include media($screen-netbook) {
     text-align: left;
     @include flex(space-between);
@@ -18,7 +21,10 @@ $style: section-comments;
     }
   }
   &__title {
-    @include text($H32, 700, $N13);
+    @include text($H24, 700, $N13);
+    @include media($screen-tablet-large) {
+      font-size: $H32;
+    }
     @include media($screen-netbook) {
       width: 270px;
     }
@@ -26,15 +32,22 @@ $style: section-comments;
   &__content-wrapper {
     overflow: hidden;
     flex: 1 1;
-    padding-left: 32px;
+    @include media($screen-tablet-large) {
+      padding-left: 32px;
+    }
   }
   &__slider {
-    margin: 0 0 0 -32px;
+    @include media($screen-tablet-large) {
+      margin: 0 0 0 -32px;
+    }
   }
   &__border {
-    display: block;
-    height: 1px;
-    width: 100%;
-    background-color: $N2;
+    display: none;
+    @include media($screen-tablet-large) {
+      display: block;
+      height: 1px;
+      width: 100%;
+      background-color: $N2;
+    }
   }
 }

@@ -2,32 +2,53 @@ $style: comments-slider;
 
 .#{$style} {
   &__slide {
-    padding: 24px 0 24px 32px;
-    height: 330px;
-    @include flex-col(space-between);
+    padding: 33px 0 24px;
+    height: 230px;
+    @include flex-col(space-between, center);
     display: flex !important;
+    @include media($screen-tablet-large) {
+      height: 330px;
+      padding: 24px 0 24px 32px;
+      align-items: stretch;
+    }
   }
   &__slide-head {
     position: relative;
   }
   &__icon-quotes {
     position: absolute;
-    top: 74px;
+    top: 29px;
     z-index: -1;
-    left: -32px;
+    left: 0px;
+    @include size(35px);
+    @include media($screen-tablet-large) {
+      top: 74px;
+      @include size(70px);
+    }
   }
   &__controll {
     border-top: 1px solid $N2;
     padding-top: 16px;
-    @include flex(space-between, center);
+    @include flex(center, center);
+    @include media($screen-tablet-large) {
+      justify-content: space-between;
+    }
   }
   &__company {
-    @include text($H18, 400, $N10);
-    margin-bottom: 72px;
+    @include text($H16, 400, $N10);
+    margin-bottom: 22px;
+    @include media($screen-tablet-large) {
+      font-size: $H18;
+      margin-bottom: 72px;
+    }
   }
   &__comment {
-    @include text($H24, 400, $N13);
+    @include text($H18, 400, $N13);
+    padding: 0 16px;
     line-height: 1.5;
+    @include media($screen-tablet-large) {
+      font-size: $H24;
+    }
   }
   &__author {
     @include text($H18, 600, $N10);
@@ -60,10 +81,14 @@ $style: comments-slider;
     }
   }
   &__arrow {
-    outline: none;
-    background-color: transparent;
-    border: none;
-    @include flex(flex-start, center);
+    display: none !important;
+    @include media($screen-tablet-large) {
+      outline: none;
+      background-color: transparent;
+      border: none;
+      @include flex(flex-start, center);
+      display: inline-flex !important;
+    }
     @include media {
       &:hover {
         .#{$style}__arrow-icon {

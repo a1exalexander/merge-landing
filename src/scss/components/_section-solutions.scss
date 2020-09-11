@@ -1,14 +1,27 @@
 $style: section-solutions;
 
 .#{$style} {
-  padding: 80px 64px 112px;
-    @include media {
-      padding:80px 88px 112px;
-    }
+  padding: 48px 16px 48px;
+  @include media($screen-tablet-small) {
+    padding: 48px 32px 48px;
+  }
+  @include media {
+    padding: 80px 88px 112px;
+  }
   &__title {
-    text-align: center;
-    @include text($H32, 700, $N13);
-    margin-bottom: 82px;
+    
+    @include text($H28, 700, $N13);
+    margin-bottom: 32px;
+    @include media($screen-tablet-small) {
+      
+      font-size: $H30;
+      margin-bottom: 52px;
+    }
+    @include media($screen-tablet-large) {
+      text-align: center;
+      font-size: $H32;
+      margin-bottom: 82px;
+    }
   }
   &__list-wrapper {
     max-width: 100%;
@@ -33,10 +46,9 @@ $style: section-solutions;
         margin-right: 112px;
       }
     }
-    
   }
   &__item {
-    margin-bottom: 72px;
+    margin-bottom: 32px;
     @include media($screen-tablet) {
       margin-bottom: 0;
       &:not(:last-of-type) {

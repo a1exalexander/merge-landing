@@ -32,12 +32,14 @@ $style: section-dribble;
   position: relative;
   z-index: 1;
   overflow: hidden;
-  padding-top: 80px;
-  padding-bottom: 80px;
-  border-radius: 4px;
   box-shadow: 0 6px 24px 0 rgba(21, 8, 8, 0.15);
   @include transition(box-shadow, transform);
+  padding-bottom: 18%;
+  @include media($screen-tablet-large) {
+    border-radius: 4px;
+  }
   @include media {
+    padding-bottom: 17%;
     &:hover {
       transform: scale(1.01);
       .#{$style}__inner {
@@ -51,7 +53,10 @@ $style: section-dribble;
   }
 
   &__wrapper {
-    padding: 0 64px;
+    padding: 0;
+    @include media($screen-tablet-large) {
+      padding: 0 32px;
+    }
     @include media {
       padding: 0 88px;
     }
@@ -64,9 +69,15 @@ $style: section-dribble;
     transform: translateY(-50%);
     left: 0;
     right: 0;
-    @include text($H32, 700, $N13);
+    @include text($H18, 700, $N13);
     margin: 0 auto;
     z-index: 5;
+    @include media($screen-tablet-small) {
+      font-size: $H24;
+    }
+    @include media($screen-tablet-large) {
+      font-size: $H32;
+    }
   }
   &__inner {
     position: absolute;
@@ -79,10 +90,17 @@ $style: section-dribble;
   &__bg {
     position: absolute;
     right: 0;
-    left: 50%;
+    left: 0;
     top: 0;
     bottom: 0;
     z-index: -1;
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+    @include media($screen-tablet-large) {
+      left: 50%;
+      object-position: left top;
+    }
   }
   &__ball {
     height: 100%;
@@ -92,32 +110,62 @@ $style: section-dribble;
     z-index: 3;
     &--big {
       $name: 'bounce-ball-big';
-      @include bounce-ball($name, -25px, 50%);
-      left: 52px;
+      @include bounce-ball($name, -10px, 50%);
+      left: 8px;
+      @include media($screen-tablet-small) {
+        left: 32px;
+      }
+      @include media($screen-tablet-large) {
+        left: 52px;
+        @include bounce-ball($name, -25px, 50%);
+      }
       .#{$style}__ball-icon {
-        @include size(180px);
+        @include size(44px);
         animation-name: $name;
         animation-duration: 0.6s;
+        @include media($screen-tablet-large) {
+          @include size(180px);
+        }
       }
     }
     &--medium {
       $name: 'bounce-ball-medium';
-      @include bounce-ball($name, -10px, 80%);
-      left: 270px;
+      @include bounce-ball($name, -5px, 60%);
+      left: 94px;
+      @include media($screen-tablet-small) {
+        left: 132px;
+      }
+      @include media($screen-tablet-large) {
+        left: 270px;
+        @include bounce-ball($name, -10px, 80%);
+      }
       .#{$style}__ball-icon {
-        @include size(68px);
+        @include size(16px);
         animation-name: $name;
         animation-duration: 0.5s;
+        @include media($screen-tablet-large) {
+          @include size(68px);
+        }
       }
     }
     &--small {
       $name: 'bounce-ball-small';
-      @include bounce-ball($name, -10px, 25%);
-      right: 260px;
+      @include bounce-ball($name, -5px, 25%);
+      right: 16px;
+      @include media($screen-tablet-small) {
+        right: 92px;
+      }
+      @include media($screen-tablet-large) {
+        right: 260px;
+        @include bounce-ball($name, -10px, 25%);
+      }
       .#{$style}__ball-icon {
-        @include size(44px);
+        @include size(14px);
         animation-name: $name;
         animation-duration: 0.4s;
+        @include media($screen-tablet-large) {
+          @include size(44px);
+        }
       }
     }
   }

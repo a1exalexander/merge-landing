@@ -7,12 +7,15 @@ $style: button;
   background-color: transparent;
   @include text($H16, 500, $N13);
   border-radius: 2px;
-  padding: 16px 48px;
+  padding: 12px 24px;
   display: inline-block;
   background-color: $G5;
   cursor: pointer;
   text-align: center;
   @include transition(filter, border-color, color, background-color);
+  @include media($screen-tablet-large) {
+    padding: 16px 48px;
+  }
   @include media {
     &:hover {
       filter: brightness(1.1);

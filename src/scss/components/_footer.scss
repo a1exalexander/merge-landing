@@ -15,26 +15,71 @@ $style: footer;
 .#{$style} {
   background-color: $N13;
   &__head {
-    padding: 128px 0;
+    padding: 48px 0;
     border-bottom: 1px solid $N9;
     text-align: center;
     position: relative;
+    @include media($screen-tablet-large) {
+      padding: 80px 0;
+    }
+    @include media {
+      padding: 128px 0;
+    }
   }
   &__title {
-    max-width: 490px;
-    @include text($H40, 700, $N0);
-    margin: 0 auto 58px;
+    position: relative;
+    z-index: 1;
+    max-width: 240px;
+    @include text($H22, 700, $N0);
+    margin: 0 auto 32px;
+    @include media($screen-tablet-small) {
+      font-size: $H24;
+    }
+    @include media($screen-tablet-large) {
+      margin: 0 auto 58px;
+      max-width: 490px;
+      font-size: $H32;
+    }
+    @include media {
+      font-size: $H40;
+    }
+  }
+  &__button-wrapper {
+    position: relative;
+    z-index: 1;
   }
   &__footer {
-    padding: 57px 0;
-    @include flex(space-between);
+    padding: 32px 0 52px;
+    @include flex-col(space-between);
+    @include media($screen-tablet-large) {
+      flex-direction: row;
+      padding: 57px 0;
+    }
+    & > * {
+      &:nth-child(1) {
+        order: 2;
+        margin-bottom: 26px;
+        @include media($screen-tablet-large) {
+          margin-bottom: 0;
+        }
+      }
+      &:nth-child(2) {
+        order: 3;
+      }
+      &:nth-child(3) {
+        order: 1;
+      }
+    }
   }
   &__contacts {
     flex: 1 1;
     @include flex-col(space-between, flex-start);
   }
   &__logo-wrapper {
-    margin-bottom: 49px;
+    margin-bottom: 16px;
+    @include media($screen-tablet-large) {
+      margin-bottom: 49px;
+    }
   }
   &__logo {
     width: 214px;
@@ -54,24 +99,35 @@ $style: footer;
     }
   }
   &__col {
-    
     @include flex-col(flex-start, flex-start);
-    
+
     &--fluid {
       flex: 1 1;
     }
     &--download {
-      flex: 1 1;
-      align-items: center;
-      margin: 0 6%;
+      @include media($screen-tablet-large) {
+        flex: 1 1;
+        align-items: center;
+        margin: 0 6%;
+      }
     }
-    &--mr {
-      margin-right: 24px;
+    &--resources {
+      margin-bottom: 32px;
+      @include media($screen-tablet-large) {
+        margin-bottom: 0;
+        margin-right: 24px;
+      }
     }
   }
   &__col-wrapper {
     flex: 1 1;
-    @include flex(space-between,  flex-start);
+    @include flex-col(space-between, center);
+    margin-bottom: 32px;
+    @include media($screen-tablet-large) {
+      margin-bottom: 0;
+      flex-direction: row;
+      align-items: flex-start;
+    }
   }
   &__circle-icon {
     background-color: #2acce2;
@@ -81,6 +137,7 @@ $style: footer;
   }
   &__icon {
     position: absolute;
+    z-index: 0;
     & > * {
       display: inline-block;
       animation-name: wave;
@@ -89,49 +146,96 @@ $style: footer;
       animation-timing-function: ease-in-out;
     }
     &:nth-child(1) {
-      left: 0;
-      top: 176px;
+      display: none;
+      @include media($screen-tablet-large) {
+        display: block;
+        left: 0;
+        top: 176px;
+      }
     }
     &:nth-child(2) {
-      left: 14%;
-      top: 57px;
+      left: 2%;
+      top: 32px;
       & > * {
         animation-delay: 200ms;
+        @include size(24px);
+        @include media($screen-tablet-large) {
+          @include size(50px);
+        }
+      }
+      @include media($screen-tablet-large) {
+        left: 14%;
+        top: 57px;
       }
     }
     &:nth-child(3) {
-      left: 16%;
-      top: 339;
+      left: 8%;
+      top: 145px;
       & > * {
         animation-delay: 400ms;
+        @include size(16px);
+        @include media($screen-tablet-large) {
+          @include size(48px);
+        }
+      }
+      @include media($screen-tablet-large) {
+        left: 16%;
+        top: 339px;
       }
     }
     &:nth-child(4) {
-      right: 8%;
+      right: 2%;
       top: 67px;
       & > * {
         animation-delay: 600ms;
+        @include size(20px);
+        @include media($screen-tablet-large) {
+          @include size(60px);
+        }
+      }
+      @include media($screen-tablet-large) {
+        right: 8%;
       }
     }
     &:nth-child(5) {
-      right: 16%;
-      top: 309px;
-      & > * {
-        animation-delay: 800ms;
+      display: none;
+      @include media($screen-tablet-large) {
+        display: block;
+        right: 16%;
+        top: 309px;
+        & > * {
+          animation-delay: 800ms;
+        }
       }
     }
     &:nth-child(6) {
       right: 0;
-      top: 318px;
+      top: 164px;
       & > * {
         animation-delay: 1000ms;
+        object-fit: contain;
+        @include size(32px);
+        @include media($screen-tablet-large) {
+          @include size(64px);
+        }
+      }
+      @include media($screen-tablet-large) {
+        top: 318px;
       }
     }
     &:nth-child(7) {
-      right: 30%;
-      top: 57px;
+      right: 26%;
+      top: 25px;
       & > * {
         animation-delay: 1200ms;
+        @include size(8px);
+        @include media($screen-tablet-large) {
+          @include size(20px);
+        }
+      }
+      @include media($screen-tablet-large) {
+        top: 57px;
+        right: 30%;
       }
     }
   }
