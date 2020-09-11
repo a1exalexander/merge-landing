@@ -64,7 +64,7 @@ $style: section-hero;
     flex: 1 1;
   }
   &__video-wrapper {
-    @include padding-hack(56.5%, cover); 
+    @include padding-hack(56.5%, contain); 
   }
   &__video {
     border-radius: 4px;
