@@ -64,10 +64,10 @@ $style: section-hero;
     flex: 1 1;
   }
   &__video-wrapper {
-    @include padding-hack(56.5%, contain);
-    box-shadow: 0px 6px 24px 2px rgba(21, 8, 8, 0.2);
+    @include padding-hack(56.5%, cover); 
   }
   &__video {
     border-radius: 4px;
+    box-shadow: 0px 6px 24px 2px rgba(21, 8, 8, 0.2);
   }
 }
