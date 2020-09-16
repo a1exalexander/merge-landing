@@ -1,6 +1,7 @@
 $style: solution-card;
 
 .#{$style} {
+  display: inline-block;
   &__image {
     max-width: 100%;
     width: 100%;

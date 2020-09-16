@@ -31,23 +31,14 @@ $style: section-solutions;
     max-width: 100%;
     @include media($screen-tablet) {
       column-count: 2;
+      column-gap: 32px;
     }
-    // @include media($screen-tablet) {
-    //   flex: 1 1;
-    //   &:not(:last-of-type) {
-    //     margin-right: 32px;
-    //   }
-    // }
-    // @include media() {
-    //   &:not(:last-of-type) {
-    //     margin-right: 64px;
-    //   }
-    // }
-    // @include media($screen-hd) {
-    //   &:not(:last-of-type) {
-    //     margin-right: 112px;
-    //   }
-    // }
+    @include media() {
+      column-gap: 64px;
+    }
+    @include media($screen-hd) {
+      column-gap: 112px;
+    }
   }
   &__item {
     @include media($screen-tablet) {
