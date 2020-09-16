@@ -6,7 +6,7 @@ AOS.init({
 });
 
 $(document).ready(function () {
-  const $comments = $('.comments-slider__comment');
+  const $comments = $('[data-value="comment"]');
   $comments.each((idx, el) => {
     clamp(el, { clamp: 4 });
   });
