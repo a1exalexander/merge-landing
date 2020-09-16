@@ -28,24 +28,31 @@ $style: section-solutions;
     }
   }
   &__list {
+    max-width: 100%;
     @include media($screen-tablet) {
-      flex: 1 1;
-      &:not(:last-of-type) {
-        margin-right: 32px;
-      }
+      column-count: 2;
     }
-    @include media() {
-      &:not(:last-of-type) {
-        margin-right: 64px;
-      }
-    }
-    @include media($screen-hd) {
-      &:not(:last-of-type) {
-        margin-right: 112px;
-      }
-    }
+    // @include media($screen-tablet) {
+    //   flex: 1 1;
+    //   &:not(:last-of-type) {
+    //     margin-right: 32px;
+    //   }
+    // }
+    // @include media() {
+    //   &:not(:last-of-type) {
+    //     margin-right: 64px;
+    //   }
+    // }
+    // @include media($screen-hd) {
+    //   &:not(:last-of-type) {
+    //     margin-right: 112px;
+    //   }
+    // }
   }
   &__item {
+    @include media($screen-tablet) {
+      
+    }
     &:not(:last-of-type) {
       margin-bottom: 57px;
       @include media($screen-tablet) {
