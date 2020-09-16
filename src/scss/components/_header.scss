@@ -1,31 +1,12 @@
 $style: header;
-@keyframes dash {
-  0% {
-    stroke-dashoffset: 1000;
-    fill: transparent;
-    stroke: $N13;
-  }
-  5% {
-    fill: transparent;
-    stroke: $N13;
-  }
-  15% {
-    fill: $N13;
-  }
-  20% {
-    stroke: transparent;
-  }
-  30% {
-    stroke: none;
-  }
-  100% {
-    stroke-dashoffset: 0;
-  }
-}
+
 .#{$style} {
   padding: 18px 0;
   position: sticky;
   @include flex(space-between, center);
+  @include media($screen-tablet-small) {
+    padding: 16px 0;
+  }
   &__list {
     list-style: none;
     @include flex(flex-start, center);
@@ -44,7 +25,7 @@ $style: header;
   &__logo {
     stroke: none;
     stroke-dasharray: 1000;
-    animation-name: dash;
+    animation-name: logo-dash;
     animation-duration: 20s;
     height: 24px;
     width: 215px;

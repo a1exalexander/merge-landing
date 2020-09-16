@@ -1,9 +1,6 @@
 const merge = require('webpack-merge');
 const common = require('./webpack.common.js');
 const helpers = require('./webpack.helpers');
-const { CleanWebpackPlugin } = require('clean-webpack-plugin');
-const CopyWebpackPlugin = require('copy-webpack-plugin');
-const path = require('path');
 
 module.exports = (env) => {
   return merge(common, {

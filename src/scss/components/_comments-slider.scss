@@ -3,7 +3,7 @@ $style: comments-slider;
 .#{$style} {
   &__slide {
     padding: 33px 0 24px;
-    height: 230px;
+    min-height: 266px;
     @include flex-col(space-between, center);
     display: flex !important;
     @include media($screen-tablet-large) {
@@ -23,7 +23,8 @@ $style: comments-slider;
     @include size(35px);
     @include media($screen-tablet-large) {
       top: 74px;
-      @include size(70px);
+      left: -32px;
+      @include size(62px);
     }
   }
   &__controll {
@@ -32,6 +33,7 @@ $style: comments-slider;
     @include flex(center, center);
     @include media($screen-tablet-large) {
       justify-content: space-between;
+      padding-top: 24px;
     }
   }
   &__company {
@@ -43,15 +45,16 @@ $style: comments-slider;
     }
   }
   &__comment {
-    @include text($H18, 400, $N13);
+    @include text($H18, 500, $N13);
     padding: 0 16px;
     line-height: 1.5;
     @include media($screen-tablet-large) {
       font-size: $H24;
+      padding: 0;
     }
   }
   &__author {
-    @include text($H18, 600, $N10);
+    @include text($H16, 600, $N10);
     &--thin {
       font-weight: 400;
     }
@@ -71,9 +74,12 @@ $style: comments-slider;
         text-indent: -9999px;
         overflow: hidden;
         border-radius: 50%;
-        @include size(10px);
+        @include size(8px);
         background-color: $N2;
         @include transition(background-color);
+        @include media($screen-tablet-small) {
+          @include size(10px);
+        }
       }
     }
     li.slick-active button {

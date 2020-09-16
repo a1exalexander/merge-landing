@@ -1,35 +1,27 @@
 $style: section-services;
 
 .#{$style} {
-  padding: 26% 0 112px;
+  padding: 22% 0 48px;
+  text-align: center;
   @include media($screen-tablet) {
     padding: 20% 0 112px;
-    text-align: center;
   }
   &__title {
-    @include text($H22, 700, $N13);
-    margin-bottom: 16px;
-    @include media($screen-tablet-small) {
-      font-size: $H24;
-    }
+    @include text($H24, 700, $N13);
+    margin-bottom: 22px;
     @include media($screen-tablet-large) {
       font-size: $H32;
     }
   }
   &__subtitle {
-    @include text($H16, 400, $N13);
-    margin-bottom: 58px;
-    @include media($screen-tablet-small) {
-      font-size: $H17;
-    }
-    @include media($screen-tablet-large) {
-      font-size: $H18;
-    }
+    @include text($H18, 400, $N13);
+    margin-bottom: 71px;
   }
   &__list {
     list-style: none;
     @include flex-col(space-between);
-    @include media($screen-tablet-small) {
+    margin: 0 0 30px;
+    @include media($screen-tablet) {
       flex-direction: row;
       align-items: flex-start;
       flex-wrap: wrap;
@@ -45,7 +37,7 @@ $style: section-services;
     }
   }
   &__item {
-    @include media($screen-tablet-small) {
+    @include media($screen-tablet) {
       flex: 0 0 calc(50% - 32px);
       margin: 0 16px;
       padding-right: 32px;
@@ -60,7 +52,7 @@ $style: section-services;
     }
     
     &:not(:last-of-type) {
-      margin-bottom: 32px;
+      margin-bottom: 30px;
       @include media() {
         margin-bottom: 0;
       }

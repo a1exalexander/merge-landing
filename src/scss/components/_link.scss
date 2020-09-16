@@ -9,13 +9,13 @@ $style: link;
   @include text($H16, 500, $G5);
   line-height: 1.4;
   @include transition(filter);
-  @include flex(center, center);
+  @include flex(center, baseline);
   display: inline-flex;
   svg {
     @include svg(17px, $G5);
     margin-left: 12px;
     position: relative;
-    bottom: -1px;
+    bottom: -2px;
   }
   @include media() {
     display: inline-block;

@@ -1,6 +1,6 @@
 $style: location-marker;
 
-@keyframes location-marker-fade-in-left {
+@keyframes location-marker-fade-in {
   0% {
     opacity: 0;
     transform: scaleX(0);
@@ -61,13 +61,19 @@ $style: location-marker;
   }
   &__text {
     @include text($H16, 500, $N13);
-    margin-right: 12px;
-    animation-name: location-marker-fade-in-left;
+    margin-left: 12px;
+    animation-name: location-marker-fade-in;
     animation-fill-mode: both;
     animation-delay: 3s;
     animation-duration: 0.5s;
-    transform-origin: center right;
+    transform-origin: center left;
     position: relative;
+    @include media($screen-tablet-small) {
+      order: -1;
+      transform-origin: center right;
+      margin-left: 0;
+      margin-right: 12px;
+    }
   }
   &__icon {
     animation-name: location-marker-bounce;

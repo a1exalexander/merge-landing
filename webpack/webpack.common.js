@@ -12,10 +12,16 @@ module.exports = {
     filename: 'js/[name].js',
   },
   devServer: {
+    host: '0.0.0.0',
     port: 1234,
+    disableHostCheck: true,
     overlay: true,
     inline: true,
     compress: false,
+    after(app, server) {
+      console.log('Dev-server: ', `http://${server.options.host}:${server.options.port}/`);
+      console.log('Local network', `http://192.168.88.17:${server.options.port}/`);
+    }
   },
   module: {
     rules: [
@@ -120,6 +126,8 @@ module.exports = {
   },
   plugins: [
     new CleanWebpackPlugin(),
-    new CopyWebpackPlugin([{ from: path.join(__dirname, helpers.src.STATIC), to: '../dist/static' }]),
+    new CopyWebpackPlugin([
+      { from: path.join(__dirname, helpers.src.STATIC), to: '../dist/static' },
+    ]),
   ],
 };

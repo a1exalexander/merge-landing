@@ -1,8 +1,10 @@
-// @import './fonts/gilroy';
 @import './core/vars';
 @import './core/mixins';
 @import './core/grid';
 @import './core/common';
+
+// Deps
+@import './animations';
 
 // Common comonent
 @import './components/link';

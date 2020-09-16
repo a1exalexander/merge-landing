@@ -5,7 +5,7 @@ $style: solution-card;
     max-width: 100%;
     width: 100%;
     height: auto;
-    margin-bottom: 26px;
+    margin-bottom: 24px;
     border: 1px solid $N2-2;
     border-radius: 4px;
     overflow: hidden;
@@ -14,27 +14,31 @@ $style: solution-card;
     }
   }
   &__title {
-    @include text($H18, 700, $N13);
+    @include text($H20, 700, $N13);
     margin-bottom: 16px;
     @include media($screen-tablet-small) {
-      font-size: $H20;
       margin-bottom: 18px;
     }
     @include media($screen-tablet-large) {
       font-size: $H24;
       margin-bottom: 22px;
     }
+    @include media {
+      margin-bottom: 12px;
+    }
   }
   &__description {
-    @include text($H14, 400, $N13);
-    margin-bottom: 26px;
-    @include media($screen-tablet-small) {
-      font-size: $H16;
-      margin-bottom: 14px;
-    }
+    @include text($H16, 400, $N13);
+    margin-bottom: 24px;
     @include media($screen-tablet-large) {
       font-size: $H18;
       margin-bottom: 22px;
+    }
+  }
+  &__button {
+    width: 100%;
+    @include media($screen-tablet-small) {
+      width: auto;
     }
   }
 }

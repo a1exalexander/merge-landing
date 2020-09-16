@@ -17,9 +17,14 @@ $style: background-map;
   }
   &__location-marker {
     pointer-events: all;
-    left: 22%;
-    top: 6%;
+    left: 41%;
+    top: 0;
+    @include media($screen-iphone-plus) {
+      left: 42%;
+      top: 3%;
+    }
     @include media($screen-tablet-small) {
+      top: 9%;
       left: 29%;
     }
     @include media($screen-tablet) {

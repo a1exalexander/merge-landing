@@ -2,26 +2,32 @@ $style: service-card;
 
 .#{$style} {
   text-align: left;
-  @include media($screen-netbook) {
-    text-align: center;
-  }
+  text-align: center;
   @include media() {
     text-align: left;
   }
-  &__title {
-    @include text($H18, 700, $N13);
-    margin-bottom: 8px;
-    line-height: 1.3;
-    @include media($screen-tablet-small) {
-      font-size: $H20;
+  &__head {
+    margin-bottom: 9px;
+    @include flex(center, center);
+    @include media {
+      @include flex-col;
     }
   }
+  &__title {
+    @include text($H20, 700, $N13);
+    line-height: 1.3;
+  }
+  
   &__description {
     @include text($H16, 400, $N10);
-    line-height: 1.4;
+    line-height: 1.5;
   }
   &__icon {
     @include size(20px);
-    margin-bottom: 12px;
+    margin-right: 16px;
+    @include media() {
+      margin-right: 0;
+      margin-bottom: 12px;
+    }
   }
 }

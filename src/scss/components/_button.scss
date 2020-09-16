@@ -35,10 +35,15 @@ $style: button;
     color: $N13;
     @include media {
       &:hover {
-        border-color: $G5;
-        color: $G5;
+        border-color: $N13;
+        background-color: $N13;
+        color: $N0;
+      }
+      &:active {
+        filter: brightness(1);
       }
     }
+    
   }
   &--fluid {
     width: 100%;

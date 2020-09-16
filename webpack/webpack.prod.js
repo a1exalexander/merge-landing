@@ -1,8 +1,8 @@
 const merge = require('webpack-merge');
 const common = require('./webpack.common.js');
 const ImageminPlugin = require('imagemin-webpack');
-const postcssPresetEnv = require('postcss-preset-env');
 const helpers = require('./webpack.helpers');
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
 module.exports = (env) => {
   return merge(common, {
@@ -42,6 +42,9 @@ module.exports = (env) => {
         },
       ],
     },
-    plugins: [...helpers.templatePlugin({ minify: { collapseWhitespace: true } })],
+    plugins: [
+      ...helpers.templatePlugin({ minify: { collapseWhitespace: true } }),
+      new BundleAnalyzerPlugin({ analyzerMode: 'static' }),
+    ],
   });
 };

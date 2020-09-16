@@ -1,0 +1,135 @@
+@keyframes logo-dash-white {
+  0% {
+    stroke-dashoffset: 1000;
+    fill: transparent;
+    stroke: $N0;
+  }
+  5% {
+    fill: transparent;
+    stroke: $N0;
+  }
+  15% {
+    fill: $N0;
+  }
+  20% {
+    stroke: transparent;
+  }
+  30% {
+    stroke: none;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes wave {
+  0% {
+    transform: translateY(-40%);
+  }
+  50% {
+    transform: translateY(40%);
+  }
+  100% {
+    transform: translateY(-40%);
+  }
+}
+
+@keyframes wave-low {
+  0% {
+    transform: translateY(-20%);
+  }
+  50% {
+    transform: translateY(20%);
+  }
+  100% {
+    transform: translateY(-20%);
+  }
+}
+
+@keyframes wave-low-x {
+  0% {
+    transform: translateX(-20%);
+  }
+  50% {
+    transform: translateX(20%);
+  }
+  100% {
+    transform: translateX(-20%);
+  }
+}
+
+@keyframes logo-dash {
+  0% {
+    stroke-dashoffset: 1000;
+    fill: transparent;
+    stroke: $N13;
+  }
+  5% {
+    fill: transparent;
+    stroke: $N13;
+  }
+  15% {
+    fill: $N13;
+  }
+  20% {
+    stroke: transparent;
+  }
+  30% {
+    stroke: none;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+[data-aos='rotate-top-right'] {
+  transition-property: transform, opacity;
+  opacity: 0;
+  transform: rotate(-180deg);
+  transform-origin: top right;
+  &.aos-animate {
+    opacity: 1;
+    transform: rotate(0);
+  }
+}
+
+[data-aos='rotate-bottom-right'] {
+  transition-property: transform, opacity;
+  opacity: 0;
+  transform: rotate(180deg);
+  transform-origin: bottom right;
+  &.aos-animate {
+    opacity: 1;
+    transform: rotate(0);
+  }
+}
+
+[data-aos='rotate-top-left'] {
+  transition-property: transform, opacity;
+  opacity: 0;
+  transform: rotate(180deg);
+  transform-origin: top left;
+  &.aos-animate {
+    opacity: 1;
+    transform: rotate(0);
+  }
+}
+
+[data-aos='rotate-bottom-left'] {
+  transition-property: transform, opacity;
+  opacity: 0;
+  transform: rotate(180deg);
+  transform-origin: bottom center;
+  &.aos-animate {
+    opacity: 1;
+    transform: rotate(0);
+  }
+}
+
+[data-aos='fade-in'] {
+  transition-property: opacity;
+  opacity: 0;
+  &.aos-animate {
+    opacity: 1;
+  }
+}

@@ -1,8 +1,11 @@
 $style: section-expertise;
 .#{$style} {
   background-color: $N1;
-  padding: 45px 0;
+  padding: 57px 0;
   @include flex(space-between, center);
+  @include media($screen-tablet-large) {
+    padding: 50px 0;
+  }
   &__image-wrapper {
     display: none;
     @include media($screen-tablet-large) {
@@ -12,7 +15,7 @@ $style: section-expertise;
       object-position: left center;
     }
     @include media {
-      padding-bottom: 34%;
+      padding-bottom: 40%;
     }
     img,
     svg {
@@ -38,12 +41,37 @@ $style: section-expertise;
       top: auto;
       z-index: 1;
     }
+    &:nth-of-type(3) {
+      @include size(14%);
+      position: absolute;
+      left: 30%;
+      top: 15%;
+      z-index: 1;
+    }
+    &:nth-of-type(4) {
+      @include size(17%);
+      position: absolute;
+      right: 40%;
+      left: auto;
+      bottom: 16%;
+      top: auto;
+      z-index: 1;
+    }
+    &:nth-of-type(5) {
+      @include size(17%);
+      position: absolute;
+      left: 2.5%;
+      top: 47.5%;
+      z-index: 1;
+    }
   }
 
   &__container {
     margin-left: 0;
-    @include flex-col(flex-start, flex-start);
+    @include flex-col(center, center);
     @include media($screen-tablet-large) {
+      justify-content: flex-start;
+      align-items: flex-start;
       width: 50%;
       padding-left: 16px;
     }
@@ -52,22 +80,26 @@ $style: section-expertise;
     }
   }
   &__title {
-    @include text($H22, 700, $N13);
-    margin-bottom: 32px;
-    @include media($screen-tablet-small) {
-      font-size: $H24;
+    text-align: center;
+    @include text($H24, 700, $N13);
+    margin-bottom: 38px;
+    @include media($screen-tablet-large) {
+      text-align: left;
     }
     @include media() {
       font-size: $H32;
-      margin-bottom: 38px;
     }
   }
   &__list {
     list-style: none;
+    text-align: center;
+    @include media($screen-tablet-large) {
+      text-align: left;
+    }
   }
   &__item {
     &:not(:last-of-type) {
-      margin-bottom: 26px;
+      margin-bottom: 32px;
       @include media($screen-tablet-large) {
         margin-bottom: 38px;
       }
