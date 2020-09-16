@@ -9,7 +9,7 @@ $style: section-solutions;
     padding: 67px 88px 100px;
   }
   &__title-wrapper {
-    margin-bottom: 20px;
+    margin-bottom: 30px;
     @include media($screen-tablet-small) {
       margin-bottom: 32px;
     }
@@ -19,6 +19,9 @@ $style: section-solutions;
   }
   &__title {
     @include text($H24, 700, $N13);
+    @include media-max($screen-tablet-small) {
+      transform: none !important;
+    }
     @include media($screen-tablet-small) {
       font-size: $H30;
     }
@@ -47,11 +50,8 @@ $style: section-solutions;
     }
   }
   &__item {
-    @include media($screen-tablet) {
-      
-    }
     &:not(:last-of-type) {
-      margin-bottom: 47px;
+      margin-bottom: 57px;
       @include media($screen-tablet) {
         margin-bottom: 52px;
       }

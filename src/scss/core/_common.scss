@@ -167,3 +167,25 @@ code {
 .modal-page {
   overflow: hidden;
 }
+
+.mobile-disable-transform {
+  @include media-max($screen-tablet-small) {
+    transform: none !important;
+  }
+}
+
+.mobile-disable-transform-all {
+  @include media-max($screen-tablet-small) {
+    transform: none !important;
+    * {
+      transform: none !important;
+    }
+  }
+}
+
+.mobile-disable-animation {
+  @include media-max($screen-tablet-small) {
+    animation: none !important;
+    animation-play-state: paused !important;
+  }
+}

@@ -118,3 +118,9 @@ $z-index: (
     @content;
   }
 }
+
+@mixin media-max($screen: $screen-desktop) {
+  @media screen and (max-width: calc(#{$screen} - 1px)) {
+    @content;
+  }
+}
