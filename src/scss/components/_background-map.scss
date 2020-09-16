@@ -7,55 +7,61 @@ $style: background-map;
   width: 100%;
   pointer-events: none;
   z-index: 0;
-  &__image-wrapper{
+  max-width: 900px;
+  margin: 0 auto;
+  overflow: hidden;
+  &::after {
+    top: 0;
+    position: absolute;
+    content: '';
+    width: 100%;
+    padding-bottom: 40%;
+    display: block;
+    background: linear-gradient(
+      180deg,
+      #ffffffa6 0%,
+      rgba(255, 255, 255, 0.01) 50%,
+      #ffffff98 100%
+    );
+  }
+  &__image-wrapper {
     pointer-events: none;
-    @include padding-hack(40%, cover);
+    padding-bottom: 40%;
+    position: relative;
+    @include media($screen-tablet-small) {
+      @include padding-hack(40%, cover);
+    }
   }
   &__image {
-    object-position: left center;
+    position: absolute;
+    object-position: 670% -50%;
     z-index: -1;
+    width: 200%;
+    height: 200%;
+    object-fit: cover;
+    @include media($screen-tablet-small) {
+      object-position: 50% 50%;
+    }
   }
   &__location-marker {
     pointer-events: all;
-    left: 41%;
-    top: 0;
+    left: 48%;
+    top: 28%;
     @include media($screen-iphone-plus) {
-      left: 42%;
-      top: 3%;
+      left: 49%;
+      top: 30%;
     }
     @include media($screen-tablet-small) {
-      top: 9%;
-      left: 29%;
+      left: 40%;
+      top: 13%;
     }
     @include media($screen-tablet) {
-      top: 10%;
-      left: 31%;
-    }
-    @include media($screen-tablet-large) {
-      top: 11%;
-      left: 32%;
-    }
-    @include media($screen-netbook) {
-      top: 13%;
-      left: 33%;
+      left: 42%;
+      top: 14%;
     }
     @include media {
-      top: 14%;
-      left: 34%;
-    }
-    @include media($screen-desktop-large) {
-      left: 35%;
-    }
-    @include media($screen-hd) {
+      left: 43%;
       top: 15%;
-      left: 36%;
-    }
-    @include media($screen-fullhd) {
-      top: 16%;
-      left: 37%;
-    }
-    @include media($screen-retina) {
-      left: 38%;
     }
   }
 }

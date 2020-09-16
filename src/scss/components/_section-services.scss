@@ -1,10 +1,11 @@
 $style: section-services;
 
 .#{$style} {
+  position: relative;
   padding: 22% 0 48px;
   text-align: center;
   @include media($screen-tablet) {
-    padding: 20% 0 112px;
+    padding: 15% 0 112px;
   }
   &__title {
     @include text($H24, 700, $N13);

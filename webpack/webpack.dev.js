@@ -14,6 +14,8 @@ module.exports = (env) => {
         },
       ],
     },
-    plugins: [...helpers.templatePlugin({ minify: false })],
+    plugins: [
+      ...helpers.templatePlugin({ minify: false }),
+    ],
   });
 };

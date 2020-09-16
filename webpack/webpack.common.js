@@ -21,7 +21,7 @@ module.exports = {
     after(app, server) {
       console.log('Dev-server: ', `http://${server.options.host}:${server.options.port}/`);
       console.log('Local network', `http://192.168.88.17:${server.options.port}/`);
-    }
+    },
   },
   module: {
     rules: [
@@ -34,7 +34,7 @@ module.exports = {
               publicPath: '/css',
               outputPath: 'css',
               name(resourcePath) {
-                if (/font/.test(resourcePath)) {
+                if (/(font|node_modules)/.test(resourcePath)) {
                   return '[name].css';
                 }
                 return '[name].[hash].css';

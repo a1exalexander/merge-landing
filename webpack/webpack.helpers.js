@@ -53,7 +53,7 @@ const templatePlugin = ({ minify }) => {
 
       return new HtmlWebpackPlugin({
         filename: `${name}.html`,
-        inject: false,
+        inject: true,
         template: path.resolve(__dirname, src.PAGES, `${name}.${extension}`),
         minify,
       });

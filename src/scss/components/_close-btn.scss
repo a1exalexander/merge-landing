@@ -1,0 +1,29 @@
+$style: close-btn;
+
+.#{$style} {
+  display: inline-flex;
+  outline: none;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  @include size(24px);
+  @include flex(center, center);
+  @include media {
+    &:hover {
+      .#{$style}__icon {
+        fill: $N9;
+        transform: scale(1.1);
+      }
+    }
+  }
+  &:active {
+    .#{$style}__icon {
+      fill: $N13;
+      transform: scale(0.9);
+    }
+  }
+  &__icon {
+    @include svg(14px, $N10);
+    @include transition(fill, transform);
+  }
+}

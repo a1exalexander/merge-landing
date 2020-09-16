@@ -2,17 +2,23 @@ $style: solution-card;
 
 .#{$style} {
   display: inline-block;
-  &__image {
-    max-width: 100%;
-    width: 100%;
-    height: auto;
-    margin-bottom: 24px;
-    border: 1px solid $N2-2;
-    border-radius: 4px;
+  position: relative;
+  &__image-wrapper {
     overflow: hidden;
+    margin-bottom: 24px;
+    border-radius: 8px;
+    border: 1px solid $N2-2;
     @include media($screen-tablet-small) {
       margin-bottom: 22px;
-    }
+   }  
+  }
+  &__image {
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    object-position: center center;
+    border-radius: 4px;
   }
   &__title {
     @include text($H20, 700, $N13);

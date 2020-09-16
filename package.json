@@ -35,7 +35,7 @@
     "imagemin-optipng": "^7.1.0",
     "imagemin-svgo": "^7.0.0",
     "imagemin-webpack": "^5.1.1",
-    "mini-css-extract-plugin": "^0.8.2",
+    "mini-css-extract-plugin": "^0.11.2",
     "node-sass": "^4.13.0",
     "optimize-css-assets-webpack-plugin": "^5.0.3",
     "postcss-loader": "^3.0.0",
@@ -44,7 +44,7 @@
     "pug-html-loader": "^1.1.5",
     "pug-loader": "^2.4.0",
     "sass-loader": "^8.0.0",
-    "style-loader": "^1.0.1",
+    "style-loader": "^1.2.1",
     "url-loader": "^3.0.0",
     "webpack": "^4.41.2",
     "webpack-bundle-analyzer": "^3.8.0",
@@ -53,8 +53,16 @@
     "webpack-merge": "^4.2.2"
   },
   "dependencies": {
+    "animate.css": "^4.1.1",
+    "aos": "^3.0.0-beta.6",
     "clamp-js-main": "^0.11.6",
     "hash-sum": "^2.0.0",
-    "resolve-url-loader": "^3.1.1"
+    "jquery": "^3.5.1",
+    "parallax-js": "^3.1.0",
+    "paroller.js": "^1.4.6",
+    "rellax": "^1.12.1",
+    "resolve-url-loader": "^3.1.1",
+    "simple-parallax-js": "^5.6.2",
+    "slick-carousel": "^1.8.1"
   }
 }
