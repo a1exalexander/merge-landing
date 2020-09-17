@@ -23,6 +23,9 @@ $style: section-hero;
   }
   &__background-map {
     top: 95%;
+    @include media($screen-tablet-small) {
+      top: 103%;
+    }
     @include media {
       top: 82%;
     }
