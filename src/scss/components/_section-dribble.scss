@@ -32,11 +32,7 @@ $style: section-dribble;
   border-radius: 6px;
   overflow: hidden;
   filter: drop-shadow(0px 20px 32px rgba(101, 101, 101, 0.08));
-  &._active {
-    .#{$style}__icon-wrapper {
-      display: block;
-    }
-  }
+  
   @include media($screen-tablet-small) {
     border-radius: 8px;
   }
@@ -83,6 +79,7 @@ $style: section-dribble;
   }
 
   &__content {
+    visibility: visible !important;
     position: absolute;
     @include flex-col(center, center);
     @include position;
@@ -91,6 +88,11 @@ $style: section-dribble;
     @include media($screen-tablet) {
       padding: 0 78px;
       align-items: flex-start;
+    }
+    &._active {
+      .#{$style}__icon {
+        display: block;
+      }
     }
   }
 
@@ -109,7 +111,7 @@ $style: section-dribble;
   }
 
   &__icon-wrapper {
-    display: none;
+    min-height: 21px;
     margin-bottom: 20px;
     &._active {
       display: block;
@@ -120,6 +122,7 @@ $style: section-dribble;
   }
 
   &__icon {
+    display: none;
     width: 80px;
     height: 21px;
     fill: $P1;
