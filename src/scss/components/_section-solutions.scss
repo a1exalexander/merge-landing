@@ -20,7 +20,7 @@ $style: section-solutions;
   &__title {
     @include text($H24, 700, $N13);
     @include media-max($screen-tablet-small) {
-      transform: none !important;
+      // transform: none !important;
     }
     @include media($screen-tablet-small) {
       font-size: $H30;
