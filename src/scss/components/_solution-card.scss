@@ -8,6 +8,10 @@ $media-parallax: 640px;
   @include media($media-parallax) {
     will-change: transform;
   }
+  &__wrapper {
+    display: inline-block;
+    will-change: transform;
+  }
   &__image-wrapper {
     overflow: hidden;
     margin-bottom: 24px;

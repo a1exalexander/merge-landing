@@ -6,7 +6,7 @@ $style: background-map;
   right: 0;
   width: 100%;
   pointer-events: none;
-  z-index: 0;
+  z-index: -1;
   max-width: 900px;
   margin: 0 auto;
   overflow: hidden;

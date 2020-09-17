@@ -1,26 +1,27 @@
 $style: section-solutions;
 
 .#{$style} {
-  padding: 53px 16px 57px;
+  padding: 53px 16px 254px;
   @include media($screen-tablet-small) {
-    padding: 53px 32px 57px;
+    padding: 53px 32px 254px;
   }
   @include media {
-    padding: 67px 88px 110px;
+    padding: 67px 88px 290px;
   }
   &__title-wrapper {
     margin-bottom: 30px;
     @include media($screen-tablet-small) {
-      margin-bottom: 32px;
+      margin-bottom: 62px;
     }
     @include media($screen-tablet-large) {
-      margin-bottom: 45px;
+      margin-bottom: 64px;
     }
   }
   &__title {
     @include text($H24, 700, $N13);
+    margin-bottom: 30px;
     @include media-max($screen-tablet-small) {
-      // transform: none !important;
+      margin-bottom: 62px;
     }
     @include media($screen-tablet-small) {
       font-size: $H30;
@@ -28,6 +29,7 @@ $style: section-solutions;
     @include media($screen-tablet-large) {
       text-align: center;
       font-size: $H32;
+      margin-bottom: 64px;
     }
   }
   &__list-wrapper {
@@ -37,16 +39,19 @@ $style: section-solutions;
     }
   }
   &__list {
-    max-width: 100%;
-    @include media($screen-tablet) {
-      column-count: 2;
-      column-gap: 32px;
-    }
-    @include media() {
-      column-gap: 64px;
-    }
-    @include media($screen-hd) {
-      column-gap: 112px;
+    & > * {
+      &:not(:last-of-type) {
+        margin-bottom: 57px;
+        @include media($screen-tablet) {
+          margin-bottom: 52px;
+        }
+      }
+      @include media($screen-tablet) {
+        width: calc(50% - 32.1px);
+      }
+      @include media($screen-hd) {
+        width: calc(50% - 64.1px);
+      }
     }
   }
   &__item {
@@ -56,5 +61,16 @@ $style: section-solutions;
         margin-bottom: 52px;
       }
     }
+  }
+  &__first-column {
+    @include media($screen-tablet) {
+      margin-right: 64px;
+    }
+    @include media($screen-hd) {
+      margin-right: 112px;
+    }
+  }
+  &__offset {
+    // margin-bottom: 100px;
   }
 }

@@ -28,6 +28,7 @@ $style: section-dribble;
 
 .#{$style} {
   display: block;
+  position: relative;
   @include flex-col(center, center);
   border-radius: 6px;
   overflow: hidden;

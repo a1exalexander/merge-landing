@@ -1,24 +1,30 @@
 $style: section-hero;
 
 .#{$style} {
-  padding: 20px 0;
+  padding: 84px 0 80px;
   @include flex-col(space-between);
   position: relative;
+  min-height: 100vh;
   @include media($screen-tablet-small) {
-    padding: 64px 0;
+    padding: 80px 0 0;
   }
   @include media {
     flex-direction: row;
     align-items: center;
   }
-.container {
+  &__container {
     position: relative;
     z-index: 1;
+    padding-top: 20px;
+    @include media($screen-tablet-small) {
+      padding-top: 0;
+      top: -80px;
+    }
   }
   &__background-map {
-    top: 92%;
+    top: 95%;
     @include media {
-      top: 79%;
+      top: 82%;
     }
   }
   &__content-side {
@@ -68,6 +74,8 @@ $style: section-hero;
     }
   }
   &__video-side {
+    position: relative;
+    z-index: 1;
     flex: 1 1 45%;
   }
   &__video-wrapper {
