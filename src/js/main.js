@@ -60,6 +60,18 @@ const installAOS = () => {
   });
 };
 
+const installHeaderStyles = () => {
+  const $header = $('.header');
+  $(document).on('scroll', (e, d) => {
+    const offset = $(document).scrollTop();
+    if (offset > 15) {
+      $header.addClass('_shadow');
+    } else {
+      $header.removeClass('_shadow');
+    }
+  });
+};
+
 $(() => {
-  fuse(installModals, installComments, installAOS);
+  fuse(installModals, installComments, installAOS, installHeaderStyles);
 });
