@@ -5,7 +5,7 @@ $style: section-services;
   padding: 22% 0 48px;
   text-align: center;
   @include media($screen-tablet) {
-    padding: 15% 0 112px;
+    padding: 12% 0 112px;
   }
   &__title {
     @include text($H24, 700, $N13);
