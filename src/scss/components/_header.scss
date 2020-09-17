@@ -4,6 +4,10 @@ $style: header;
   padding: 18px 0;
   position: sticky;
   @include flex(space-between, center);
+  position: sticky;
+  background-color: $N0;
+  top: 0;
+  z-index: 10;
   @include media($screen-tablet-small) {
     padding: 16px 0;
   }

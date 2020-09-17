@@ -2,22 +2,48 @@ $style: modal-video;
 
 .#{$style} {
   flex-shrink: 0;
-  width: 100%;
   @include flex-col(flex-start, center);
   padding: 12px;
+  width: 100%;
   @include media($screen-tablet) {
     padding: 40px 40px 20px;
   }
   &__video-wrapper {
     width: 100%;
-    @include padding-hack(56.5%, cover);
     margin-bottom: 10px;
     @include media($screen-tablet){
       margin-bottom: 20px;
     }
+    @include media() {
+      @include padding-hack(56.5%, cover);
+    }
   }
   &__video {
+    width: 100%;
+    height: 180px;
     border: none;
+    @include media($screen-iphone-6) {
+      height: 200px;
+    }
+    @include media($screen-iphone-plus) {
+      height: 270px;
+    }
+    @include media($screen-tablet-small) {
+      height: 340px;
+    }
+    @include media($screen-tablet) {
+      height: 380px;
+    }
+    @include media($screen-tablet-large) {
+      height: 420px;
+    }
+    @include media($screen-netbook) {
+      height: 460px;
+    }
+    @include media() {
+      width: 100%;
+      height: 100%;
+    }
   }
   &__button {
     padding: 11.5px 32px;

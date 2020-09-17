@@ -133,3 +133,23 @@
     opacity: 1;
   }
 }
+
+$aos-distance: 100px !default;
+
+[data-aos^='fade-']  {
+  @include media-max($screen-tablet-small) {
+    transform: translate3d(0, $aos-distance, 0) !important;
+    &.aos-animate {
+      transform: none !important;
+    }
+  }
+}
+
+[data-aos^='zoom-in-']  {
+  @include media-max($screen-tablet-small) {
+    transform: translate3d(0, $aos-distance, 0) scale(.6) !important;
+    &.aos-animate {
+      transform: translate3d(0, 0, 0) scale(1) !important;
+    }
+  }
+}
