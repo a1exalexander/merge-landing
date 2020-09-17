@@ -57,6 +57,7 @@
     "animate.css": "^4.1.1",
     "aos": "^3.0.0-beta.6",
     "clamp-js-main": "^0.11.6",
-    "jquery": "^3.5.1"
+    "jquery": "^3.5.1",
+    "slick-carousel": "^1.8.1"
   }
 }
