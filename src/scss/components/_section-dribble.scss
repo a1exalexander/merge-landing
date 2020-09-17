@@ -40,16 +40,18 @@ $style: section-dribble;
   @include media($screen-tablet-small) {
     border-radius: 8px;
   }
-  @include media($screen-tablet) {
-    &:before {
-      content: '';
-      display: block;
-      position: absolute;
-      @include position;
-      z-index: 1;
+  &:before {
+    content: '';
+    display: block;
+    position: absolute;
+    @include position;
+    z-index: 1;
+    background: linear-gradient(90deg, #ffffff 0%, rgba(255, 255, 255, 0) 100%);
+    @include media($screen-tablet) {
       background: linear-gradient(90deg, #ffffff 0%, #ffffff 50%, rgba(255, 255, 255, 0) 100%);
     }
   }
+  
 
   &__wrapper {
     padding: 0 16px;
