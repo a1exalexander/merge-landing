@@ -15,8 +15,9 @@ $style: section-comments;
   }
   &__title-wrapper {
     flex: 0 0;
+    margin-bottom: 46px;
     @include media($screen-netbook) {
-      padding-top: 115px;
+      margin-bottom: 0;
       margin-right: 140px;
     }
   }

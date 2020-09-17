@@ -1,26 +1,3 @@
-@keyframes logo-dash-white {
-  0% {
-    stroke-dashoffset: 1000;
-    fill: transparent;
-    stroke: $N0;
-  }
-  5% {
-    fill: transparent;
-    stroke: $N0;
-  }
-  15% {
-    fill: $N0;
-  }
-  20% {
-    stroke: transparent;
-  }
-  30% {
-    stroke: none;
-  }
-  100% {
-    stroke-dashoffset: 0;
-  }
-}
 
 @keyframes wave {
   0% {
@@ -58,10 +35,10 @@
   }
 }
 
-@keyframes logo-dash {
+@keyframes logo-dash-black {
   0% {
     stroke-dashoffset: 1000;
-    fill: transparent;
+    fill: $N0;
     stroke: $N13;
   }
   5% {
@@ -79,6 +56,78 @@
   }
   100% {
     stroke-dashoffset: 0;
+  }
+}
+
+@keyframes logo-dash-pink {
+  0% {
+    stroke-dashoffset: 1000;
+    fill: transparent;
+    stroke: $P1;
+  }
+  5% {
+    fill: transparent;
+    stroke: $P1;
+  }
+  15% {
+    fill: $P1;
+  }
+  20% {
+    stroke: transparent;
+  }
+  30% {
+    stroke: none;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes logo-dash-white {
+  0% {
+    stroke-dashoffset: 1000;
+    fill: $N13;
+    stroke: $N0;
+  }
+  5% {
+    fill: transparent;
+    stroke: $N0;
+  }
+  15% {
+    fill: $N0;
+  }
+  20% {
+    stroke: transparent;
+  }
+  30% {
+    stroke: none;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes dot-bounce {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(6);
+  }
+  60% {
+    transform: scale(4);
+  }
+  70% {
+    transform: scale(5);
+  }
+  80% {
+    transform: scale(3);
+  }
+  90% {
+    transform: scale(4);
+  }
+  100% {
+    transform: scale(1);
   }
 }
 

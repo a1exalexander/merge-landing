@@ -11,16 +11,17 @@ $media-parallax: 640px;
   &__image-wrapper {
     overflow: hidden;
     margin-bottom: 24px;
-    border-radius: 8px;
+    border-radius: 6px;
     border: 1px solid $N2-2;
     @include media($screen-tablet-small) {
       margin-bottom: 22px;
+      border-radius: 8px;
     }
   }
   &__image-inner {
     @include media($media-parallax) {
       transform: scale(1.6);
-      transform-origin: left center;
+      transform-origin: 2px 45%;
     }
   }
   &__image {
@@ -29,7 +30,6 @@ $media-parallax: 640px;
     height: auto;
     object-fit: cover;
     object-position: center center;
-    border-radius: 4px;
     @include media($media-parallax) {
       will-change: transform;
     }

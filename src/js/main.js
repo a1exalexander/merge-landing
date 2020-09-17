@@ -1,5 +1,6 @@
 import clamp from 'clamp-js-main';
 import AOS from 'aos';
+import LazyLinePainter from 'lazy-line-painter';
 
 const fuse = (...fns) => {
   fns.forEach((fn) => {
@@ -62,12 +63,16 @@ const installAOS = () => {
 
 const installHeaderStyles = () => {
   const $header = $('.header');
+  const $bookButtonMobile = $('#header-book-button-mobile');
+
   $(document).on('scroll', (e, d) => {
     const offset = $(document).scrollTop();
-    if (offset > 15) {
+    if (offset > 40 && !$header.hasClass('_shadow')) {
       $header.addClass('_shadow');
-    } else {
+      $bookButtonMobile.removeClass('button--black');
+    } else if (offset <= 40 && $header.hasClass('_shadow')) {
       $header.removeClass('_shadow');
+      $bookButtonMobile.addClass('button--black');
     }
   });
 };
