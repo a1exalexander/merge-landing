@@ -33,7 +33,7 @@ $style: section-dribble;
   border-radius: 6px;
   overflow: hidden;
   filter: drop-shadow(0px 20px 32px rgba(101, 101, 101, 0.08));
-  
+
   @include media($screen-tablet-small) {
     border-radius: 8px;
   }
@@ -42,13 +42,12 @@ $style: section-dribble;
     display: block;
     position: absolute;
     @include position;
-    z-index: 1;
+    z-index: 3;
     background: linear-gradient(90deg, #ffffff 0%, rgba(255, 255, 255, 0) 100%);
     @include media($screen-tablet) {
       background: linear-gradient(90deg, #ffffff 0%, #ffffff 50%, rgba(255, 255, 255, 0) 100%);
     }
   }
-  
 
   &__wrapper {
     padding: 0 16px;
@@ -74,9 +73,14 @@ $style: section-dribble;
     position: absolute;
     @include position;
     object-fit: cover;
+    z-index: 1;
     width: 100%;
     height: 100%;
     object-position: right center;
+    // transition: all 1s ease;
+    &._active {
+      z-index: 2;
+    }
   }
 
   &__content {
@@ -84,7 +88,7 @@ $style: section-dribble;
     position: absolute;
     @include flex-col(center, center);
     @include position;
-    z-index: 2;
+    z-index: 4;
     background: linear-gradient(90deg, rgba(239, 162, 188, 0.25) 0%, rgba(255, 255, 255, 0) 100%);
     @include media($screen-tablet) {
       padding: 0 78px;
@@ -131,6 +135,5 @@ $style: section-dribble;
     stroke-dasharray: 1000;
     animation-name: logo-dash-pink;
     animation-duration: 20s;
-    
   }
 }
