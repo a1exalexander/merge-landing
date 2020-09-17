@@ -1,7 +1,5 @@
 import clamp from 'clamp-js-main';
 import AOS from 'aos';
-import simpleParallax from 'simple-parallax-js';
-// import Rellax from 'rellax';
 
 const fuse = (...fns) => {
   fns.forEach((fn) => {
@@ -62,14 +60,6 @@ const installAOS = () => {
   });
 };
 
-const installParallax = () => {
-  const parallaxElements = document.querySelectorAll('.solution-card__image');
-  new simpleParallax(parallaxElements, {
-    overflow: false,
-    scale: 1.2,
-  });
-};
-
 $(() => {
-  fuse(installModals, installComments, installAOS, installParallax);
+  fuse(installModals, installComments, installAOS);
 });

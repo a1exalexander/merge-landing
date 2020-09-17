@@ -50,19 +50,13 @@
     "webpack-bundle-analyzer": "^3.8.0",
     "webpack-cli": "^3.3.10",
     "webpack-dev-server": "^3.9.0",
-    "webpack-merge": "^4.2.2"
+    "webpack-merge": "^4.2.2",
+    "resolve-url-loader": "^3.1.1"
   },
   "dependencies": {
     "animate.css": "^4.1.1",
     "aos": "^3.0.0-beta.6",
     "clamp-js-main": "^0.11.6",
-    "hash-sum": "^2.0.0",
-    "jquery": "^3.5.1",
-    "parallax-js": "^3.1.0",
-    "paroller.js": "^1.4.6",
-    "rellax": "^1.12.1",
-    "resolve-url-loader": "^3.1.1",
-    "simple-parallax-js": "^5.6.2",
-    "slick-carousel": "^1.8.1"
+    "jquery": "^3.5.1"
   }
 }
