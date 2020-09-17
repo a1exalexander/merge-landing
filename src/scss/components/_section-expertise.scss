@@ -67,9 +67,9 @@ $style: section-expertise;
   }
 
   &__container {
-    margin-left: 0;
     @include flex-col(center, center);
     @include media($screen-tablet-large) {
+      margin-left: 0;
       justify-content: flex-start;
       align-items: flex-start;
       width: 50%;

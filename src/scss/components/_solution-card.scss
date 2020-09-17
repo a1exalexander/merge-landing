@@ -1,8 +1,13 @@
 $style: solution-card;
 
+$media-parallax: 640px;
+
 .#{$style} {
   display: inline-block;
   position: relative;
+  @include media($media-parallax) {
+    will-change: transform;
+  }
   &__image-wrapper {
     overflow: hidden;
     margin-bottom: 24px;
@@ -10,7 +15,12 @@ $style: solution-card;
     border: 1px solid $N2-2;
     @include media($screen-tablet-small) {
       margin-bottom: 22px;
-   }  
+    }
+  }
+  &__image-inner {
+    @include media($media-parallax) {
+      transform: scale(1.3);
+    }
   }
   &__image {
     display: block;
@@ -19,6 +29,9 @@ $style: solution-card;
     object-fit: cover;
     object-position: center center;
     border-radius: 4px;
+    @include media($media-parallax) {
+      will-change: transform;
+    }
   }
   &__title {
     @include text($H20, 700, $N13);
