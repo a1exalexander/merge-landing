@@ -1,9 +1,11 @@
 import AOS from 'aos';
 import 'uikit';
-import { installCommentsSlider } from './source/comments';
+import { CommentsSlider } from './source/comments';
 import { fuse } from './source/helpers';
 
 let init = false;
+
+const commentsSlider = new CommentsSlider();
 
 const installModals = () => {
   const $linkToModalVideo = $('#modal-video');
@@ -25,7 +27,6 @@ const installModals = () => {
     });
   });
 };
-
 
 const installAOS = () => {
   AOS.init({
@@ -88,7 +89,13 @@ const installDribbleSlider = () => {
 
 $(() => {
   if (!init) {
-    fuse(installModals, installCommentsSlider, installAOS, installHeaderStyles, installDribbleSlider);
+    fuse(
+      installAOS,
+      installHeaderStyles,
+      installModals,
+      installDribbleSlider,
+      commentsSlider.install
+    );
     init = true;
   }
 });

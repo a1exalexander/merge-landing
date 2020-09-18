@@ -54,6 +54,7 @@
     "webpack-merge": "^4.2.2"
   },
   "dependencies": {
+    "@babel/plugin-proposal-class-properties": "^7.10.4",
     "animate.css": "^4.1.1",
     "animejs": "^3.2.0",
     "aos": "^3.0.0-beta.6",
