@@ -1,16 +1,9 @@
-import clamp from 'clamp-js-main';
 import AOS from 'aos';
-import anime from 'animejs';
+import 'uikit';
+import { installCommentsSlider } from './source/comments';
+import { fuse } from './source/helpers';
 
-const fuse = (...fns) => {
-  fns.forEach((fn) => {
-    try {
-      fn();
-    } catch (err) {
-      console.error(`Function name: "${fn.name}": \n`, err);
-    }
-  });
-};
+let init = false;
 
 const installModals = () => {
   const $linkToModalVideo = $('#modal-video');
@@ -33,93 +26,6 @@ const installModals = () => {
   });
 };
 
-const installComments = () => {
-  const $comments = $('[data-value="comment"]');
-  const $iconQuotes = $('#slider-icon-qoutes');
-
-  $comments.each((idx, el) => {
-    clamp(el, { clamp: 4 });
-  });
-
-  const setIconPosition = () => {
-    const $activeText = $('.slick-active [data-value="comment"]');
-    if ($activeText.length) {
-      const offset = $activeText.offset().left - $activeText.parent().offset().left;
-      const left = offset ? offset + 4 : offset + 16;
-      $iconQuotes.animate({ left });
-    }
-  };
-
-  const replaceText = (name) => {
-    const $text = $(`.slick-active [data-value="${name}"]`);
-    $text.html($text.text().replace(/\S/g, "<span class='letter'>$&</span>"));
-    $text.css({ visibility: 'visible' });
-  };
-
-  const getAnimateConfig = (name, delay) => {
-    return {
-      targets: `.slick-active [data-value="${name}"] .letter`,
-      translateX: [40, 0],
-      translateZ: 0,
-      opacity: [0, 1],
-      easing: 'easeOutExpo',
-      duration: 3000,
-      delay,
-      delay: (el, i) => 500 + 30 * i,
-    };
-  };
-
-  const animateText = () => {
-    replaceText('author');
-    replaceText('company');
-    anime
-      .timeline()
-      .add(getAnimateConfig('company'), 0)
-      .add(getAnimateConfig('author'), 500);
-  };
-
-  const init = () => {
-    setIconPosition();
-    animateText();
-  };
-
-  $.when(
-    $('#comments-slider')
-      .not('.slick-initialized')
-      .slick({
-        arrows: true,
-        infinite: true,
-        speed: 800,
-        autoplay: true,
-        autoplaySpeed: 5000,
-        draggable: true,
-        touchThreshold: 100,
-        prevArrow: false,
-        nextArrow: '.comments-slider__arrow',
-        dots: true,
-        appendDots: '.comments-slider__dots',
-      })
-      .on('init', () => {
-        console.log('init');
-        setTimeout(() => {
-          setIconPosition();
-        }, 10);
-      })
-      .on('beforeChange', () => {
-        setTimeout(() => {
-          init();
-          const $author = $(`.slick-active [data-value="author"]`);
-          const $company = $(`.slick-active [data-value="company"]`);
-          $author.css({ visibility: 'hidden' });
-          $company.css({ visibility: 'hidden' });
-        }, 10);
-      })
-      .on('afterChange', () => {
-        console.log('after change');
-        animateText();
-      })
-  ).then(init());
-};
 
 const installAOS = () => {
   AOS.init({
@@ -181,5 +87,8 @@ const installDribbleSlider = () => {
 };
 
 $(() => {
-  fuse(installModals, installComments, installAOS, installHeaderStyles, installDribbleSlider);
+  if (!init) {
+    fuse(installModals, installCommentsSlider, installAOS, installHeaderStyles, installDribbleSlider);
+    init = true;
+  }
 });

@@ -7,9 +7,8 @@ $style: comments-slider;
     @include flex-col(space-between, center);
     display: flex !important;
     @include media($screen-tablet-large) {
-      height: 330px;
+      min-height: 330px;
       padding: 20px 0 24px 32px;
-      
     }
     @include media($screen-netbook) {
       align-items: stretch;
@@ -32,7 +31,7 @@ $style: comments-slider;
       left: -10px;
     }
     @include media($screen-netbook) {
-      left: -32px;
+      left: -px;
     }
   }
   &__controll {
@@ -53,10 +52,17 @@ $style: comments-slider;
       margin-bottom: 6px;
     }
   }
+  &__comment-wrapper {
+    margin-bottom: 24px;
+    overflow: hidden;
+  }
   &__comment {
     @include text($H18, 500, $N13);
     padding: 0 16px;
     line-height: 1.5;
+    &._full {
+      display: none;
+    }
     @include media($screen-tablet-large) {
       font-size: $H24;
       padding: 0;
