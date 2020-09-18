@@ -92,6 +92,15 @@ export class CommentsSlider {
     this._animateText();
   };
 
+  _compressComment = () => {
+    const $el = $(`.slick-active [data-value="comment-wrapper"]`);
+    if ($el.hasClass('_expanded')) {
+      $el.removeClass('_expanded');
+      $el.css({ height: `${this.minHeight}px` });
+      $el.children().eq(1).hide().siblings().show();
+    }
+  };
+
   install = () => {
     $.when(fuse(this._truncateComments, this._installAccordion)).then(() => {
       $.when(
@@ -113,13 +122,11 @@ export class CommentsSlider {
           .on('init', () => {
             this._onInitSlider();
           })
+          .on('swipe', () => {
+            this._compressComment();
+          })
           .on('beforeChange', () => {
-            const $el = $(`.slick-active [data-value="comment-wrapper"]`);
-            if ($el.hasClass('_expanded')) {
-              $el.removeClass('_expanded');
-              $el.css({ height: `${this.minHeight}px` });
-              $el.children().eq(1).hide().siblings().show();
-            }
+            this._compressComment();
             setTimeout(() => {
               this._onInitSlider();
               const $author = $(`.slick-active [data-value="author"]`);
