@@ -6,6 +6,8 @@ $style: comments-slider;
     min-height: 266px;
     @include flex-col(space-between, center);
     display: flex !important;
+    outline: none;
+    border: none;
     @include media($screen-tablet-large) {
       min-height: 330px;
       padding: 20px 0 24px 32px;
@@ -67,7 +69,6 @@ $style: comments-slider;
       font-size: $H24;
       padding: 0;
     }
-    
   }
   &__author {
     @include text($H16, 400, $N10);
