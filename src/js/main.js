@@ -1,6 +1,6 @@
 import clamp from 'clamp-js-main';
 import AOS from 'aos';
-import LazyLinePainter from 'lazy-line-painter';
+import anime from 'animejs';
 
 const fuse = (...fns) => {
   fns.forEach((fn) => {
@@ -35,22 +35,90 @@ const installModals = () => {
 
 const installComments = () => {
   const $comments = $('[data-value="comment"]');
+  const $iconQuotes = $('#slider-icon-qoutes');
 
   $comments.each((idx, el) => {
     clamp(el, { clamp: 4 });
   });
 
-  $('#comments-slider').not('.slick-initialized').slick({
-    arrows: true,
-    infinite: true,
-    speed: 800,
-    draggable: true,
-    touchThreshold: 100,
-    prevArrow: false,
-    nextArrow: '.comments-slider__arrow',
-    dots: true,
-    appendDots: '.comments-slider__dots',
-  });
+  const setIconPosition = () => {
+    const $activeText = $('.slick-active [data-value="comment"]');
+    if ($activeText.length) {
+      const offset = $activeText.offset().left - $activeText.parent().offset().left;
+      const left = offset ? offset + 4 : offset + 16;
+      $iconQuotes.animate({ left });
+    }
+  };
+
+  const replaceText = (name) => {
+    const $text = $(`.slick-active [data-value="${name}"]`);
+    $text.html($text.text().replace(/\S/g, "<span class='letter'>$&</span>"));
+    $text.css({ visibility: 'visible' });
+  };
+
+  const getAnimateConfig = (name, delay) => {
+    return {
+      targets: `.slick-active [data-value="${name}"] .letter`,
+      translateX: [40, 0],
+      translateZ: 0,
+      opacity: [0, 1],
+      easing: 'easeOutExpo',
+      duration: 3000,
+      delay,
+      delay: (el, i) => 500 + 30 * i,
+    };
+  };
+
+  const animateText = () => {
+    replaceText('author');
+    replaceText('company');
+    anime
+      .timeline()
+      .add(getAnimateConfig('company'), 0)
+      .add(getAnimateConfig('author'), 500);
+  };
+
+  const init = () => {
+    setIconPosition();
+    animateText();
+  };
+
+  $.when(
+    $('#comments-slider')
+      .not('.slick-initialized')
+      .slick({
+        arrows: true,
+        infinite: true,
+        speed: 800,
+        autoplay: true,
+        autoplaySpeed: 5000,
+        draggable: true,
+        touchThreshold: 100,
+        prevArrow: false,
+        nextArrow: '.comments-slider__arrow',
+        dots: true,
+        appendDots: '.comments-slider__dots',
+      })
+      .on('init', () => {
+        console.log('init');
+        setTimeout(() => {
+          setIconPosition();
+        }, 10);
+      })
+      .on('beforeChange', () => {
+        setTimeout(() => {
+          init();
+          const $author = $(`.slick-active [data-value="author"]`);
+          const $company = $(`.slick-active [data-value="company"]`);
+          $author.css({ visibility: 'hidden' });
+          $company.css({ visibility: 'hidden' });
+        }, 10);
+      })
+      .on('afterChange', () => {
+        console.log('after change');
+        animateText();
+      })
+  ).then(init());
 };
 
 const installAOS = () => {
@@ -106,7 +174,7 @@ const installDribbleSlider = () => {
       $slides.eq(slideIdx).addClass('uk-animation-kenburns _active').fadeIn(1000);
       $.when($slides.eq(oldIdx).removeClass('_active').fadeOut(1000)).then(() => {
         $slides.eq(oldIdx).removeClass('uk-animation-kenburns');
-      })
+      });
       timer = setTimeout(slider, delay);
     }, delay);
   }

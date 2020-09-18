@@ -1,12 +1,12 @@
 $style: section-solutions;
 
 .#{$style} {
-  padding: 53px 16px 254px;
+  padding: 63px 16px 254px;
   @include media($screen-tablet-small) {
-    padding: 53px 32px 254px;
+    padding: 73px 32px 254px;
   }
   @include media {
-    padding: 67px 88px 290px;
+    padding: 100px 88px 290px;
   }
   &__title-wrapper {
     margin-bottom: 30px;

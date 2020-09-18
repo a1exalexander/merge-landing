@@ -9,22 +9,30 @@ $style: comments-slider;
     @include media($screen-tablet-large) {
       height: 330px;
       padding: 20px 0 24px 32px;
+      
+    }
+    @include media($screen-netbook) {
       align-items: stretch;
     }
   }
-  &__slide-head {
-    position: relative;
+  &__icon-quotes-wrapper {
+    position: absolute;
+    top: 0px;
+    z-index: 0;
+    @include media($screen-tablet-large) {
+      top: -6px;
+    }
   }
   &__icon-quotes {
-    position: absolute;
-    top: -14px;
-    z-index: -1;
-    left: 0px;
+    position: relative;
     @include size(35px);
+    left: 4px;
     @include media($screen-tablet-large) {
-      top: -26px;
-      left: -32px;
       @include size(62px);
+      left: -10px;
+    }
+    @include media($screen-netbook) {
+      left: -32px;
     }
   }
   &__controll {
@@ -39,6 +47,7 @@ $style: comments-slider;
   &__company {
     @include text($H16, 600, $N10);
     margin-bottom: 2px;
+    visibility: hidden;
     @include media($screen-tablet-large) {
       font-size: $H18;
       margin-bottom: 6px;
@@ -52,9 +61,11 @@ $style: comments-slider;
       font-size: $H24;
       padding: 0;
     }
+    
   }
   &__author {
     @include text($H16, 400, $N10);
+    visibility: hidden;
   }
   &__dots {
     ul {

@@ -31,6 +31,7 @@ $style: section-comments;
     }
   }
   &__content-wrapper {
+    position: relative;
     overflow: hidden;
     flex: 1 1;
     @include media($screen-tablet-large) {

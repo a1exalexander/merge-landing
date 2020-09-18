@@ -13,6 +13,7 @@ $media-parallax: 640px;
     will-change: transform;
   }
   &__image-wrapper {
+    display: inline-block;
     overflow: hidden;
     margin-bottom: 24px;
     border-radius: 6px;
@@ -22,21 +23,10 @@ $media-parallax: 640px;
       border-radius: 8px;
     }
   }
-  &__image-inner {
-    @include media($media-parallax) {
-      transform: scale(1.6);
-      transform-origin: 2px 45%;
-    }
-  }
   &__image {
     display: block;
     width: 100%;
     height: auto;
-    object-fit: cover;
-    object-position: center center;
-    @include media($media-parallax) {
-      will-change: transform;
-    }
   }
   &__title {
     @include text($H20, 700, $N13);
