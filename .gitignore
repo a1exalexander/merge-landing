@@ -9,9 +9,6 @@ bower_componets
 
 *.sublime*
 
-/dist
-/build
-
 psd
 thumb
 sketch
