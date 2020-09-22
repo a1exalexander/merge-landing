@@ -16,6 +16,7 @@ module.exports = (env) => {
     },
     plugins: [
       ...helpers.templatePlugin({ minify: false }),
+      new BundleAnalyzerPlugin({ analyzerMode: 'static' }),
     ],
   });
 };

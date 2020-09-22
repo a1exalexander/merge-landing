@@ -43,8 +43,7 @@ module.exports = (env) => {
       ],
     },
     plugins: [
-      ...helpers.templatePlugin({ minify: { collapseWhitespace: true } }),
-      new BundleAnalyzerPlugin({ analyzerMode: 'static' }),
+      ...helpers.templatePlugin({ minify: { collapseWhitespace: true } })
     ],
   });
 };
