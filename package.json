@@ -10,6 +10,11 @@
     "build:dev": "webpack --config ./webpack/webpack.dev.js",
     "validate": "html-validate ./src/**/*.html"
   },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run build"
+    }
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
@@ -59,6 +64,7 @@
     "animejs": "^3.2.0",
     "aos": "^3.0.0-beta.6",
     "clamp-js-main": "^0.11.6",
+    "husky": "^4.3.0",
     "jquery": "^3.5.1",
     "lazy-line-painter": "^1.9.6",
     "slick-carousel": "^1.8.1",
