@@ -1,68 +1,65 @@
 $style: header;
-
 .#{$style} {
-  padding: 18px 0;
-  position: sticky;
-  @include flex(space-between, center);
-  position: fixed;
-  background-color: $N0;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 10;
-  @include transition(box-shadow, background-color);
-  transition-duration: 1s;
-  &._shadow {
-    box-shadow: 0 2px 6px 0 rgba(black, 0.12);
-    background-color: $N13;
-    .#{$style}__logo {
-      animation-name: logo-dash-white;
-      fill: $N0;
+    padding: 18px 0;
+    position: sticky;
+    @include flex(space-between, center);
+    position: fixed;
+    background-color: $N0;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 10;
+    @include transition(box-shadow, background-color);
+    transition-duration: 1s;
+    &._shadow {
+        box-shadow: 0 2px 6px 0 rgba(black, 0.12);
+        .#{$style}__logo {
+            // animation-name: logo-dash-white;
+            fill: $N13;
+        }
     }
-  }
-  @include media($screen-tablet-small) {
-    padding: 16px 0;
-  }
-  &__list {
-    list-style: none;
-    @include flex(flex-start, center);
-  }
-  &__item {
-    &:not(:last-of-type) {
-      margin-right: 32px;
+    @include media($screen-tablet-small) {
+        padding: 16px 0;
     }
-    &--not-mobile {
-      display: none;
-      @include media($screen-tablet-small) {
-        display: inline-block;
-      }
+    &__list {
+        list-style: none;
+        @include flex(flex-start, center);
     }
-  }
-  &__logo {
-    stroke: none;
-    stroke-dasharray: 1000;
-    animation-name: logo-dash-black;
-    animation-duration: 20s;
-    height: 24px;
-    width: 215px;
-
-    &--mobile {
-      width: 124px;
-      height: 25px;
-      @include media($screen-tablet-small) {
-        display: none;
-      }
+    &__item {
+        &:not(:last-of-type) {
+            margin-right: 32px;
+        }
+        &--not-mobile {
+            display: none;
+            @include media($screen-tablet-small) {
+                display: inline-block;
+            }
+        }
     }
-    &--desktop {
-      width: 215px;
-      display: none;
-      @include media($screen-tablet-small) {
-        display: block;
-      }
+    &__logo {
+        stroke: none;
+        stroke-dasharray: 1000;
+        animation-name: logo-dash-black;
+        animation-duration: 20s;
+        height: 24px;
+        width: 215px;
+        &--mobile {
+            width: 124px;
+            height: 25px;
+            @include media($screen-tablet-small) {
+                display: none;
+            }
+        }
+        &--desktop {
+            width: 215px;
+            display: none;
+            @include media($screen-tablet-small) {
+                display: block;
+            }
+        }
     }
-  }
-  &__logo-wrapper {
-    @include flex(center, center);
-    display: inline-flex;
-  }
+    &__logo-wrapper {
+        @include flex(center, center);
+        display: inline-flex;
+    }
 }
