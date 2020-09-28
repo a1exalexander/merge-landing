@@ -13,6 +13,8 @@ $style: header;
     transition-duration: 1s;
     &._shadow {
         box-shadow: 0 2px 6px 0 rgba(black, 0.12);
+        padding: 12px 0;
+        background-color: rgba(white, 0.8);
         .#{$style}__logo {
             // animation-name: logo-dash-white;
             fill: $N13;

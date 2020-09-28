@@ -37,7 +37,7 @@ module.exports = {
                 if (/(font|node_modules)/.test(resourcePath)) {
                   return '[name].css';
                 }
-                return '[name].[hash].css';
+                return '[name].css';
               },
               esModule: false,
             },
