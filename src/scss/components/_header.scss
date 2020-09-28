@@ -9,7 +9,7 @@ $style: header;
     left: 0;
     right: 0;
     z-index: 10;
-    @include transition(box-shadow, background-color);
+    @include transition(box-shadow, background-color, padding);
     transition-duration: 1s;
     &._shadow {
         box-shadow: 0 2px 6px 0 rgba(black, 0.12);
