@@ -9,7 +9,7 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, '../dist'),
     publicPath: '',
-    filename: 'js/[name].js',
+    filename: 'js/[name].[hash].js',
   },
   devServer: {
     host: '0.0.0.0',
@@ -37,7 +37,7 @@ module.exports = {
                 if (/(font|node_modules)/.test(resourcePath)) {
                   return '[name].css';
                 }
-                return '[name].css';
+                return '[name].[hash].css';
               },
               esModule: false,
             },
