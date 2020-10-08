@@ -49,6 +49,7 @@ $style: comments-slider;
     @include text($H16, 600, $N10);
     margin-bottom: 2px;
     visibility: hidden;
+    color: $G5;
     @include media($screen-tablet-large) {
       font-size: $H18;
       margin-bottom: 6px;

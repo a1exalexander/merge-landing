@@ -74,7 +74,7 @@ export class CommentsSlider {
       easing: 'easeOutExpo',
       duration: 3000,
       delay,
-      delay: (el, i) => 500 + 30 * i,
+      delay: (el, i) => 0 + 30 * i,
     };
   };
 
