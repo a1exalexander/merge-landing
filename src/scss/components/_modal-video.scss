@@ -15,7 +15,7 @@ $style: modal-video;
       margin-bottom: 20px;
     }
     @include media() {
-      @include padding-hack(56.5%, cover);
+      height: 590px;
     }
   }
   &__video {

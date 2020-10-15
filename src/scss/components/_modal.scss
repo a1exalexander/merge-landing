@@ -40,7 +40,7 @@ $style: modal;
   }
   &__close-link {
     @include media ($screen-tablet) {
-      display: none;
+      display: none !important;
     }
   }
   &__close-btn {
