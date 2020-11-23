@@ -14,10 +14,6 @@ $style: button;
   text-align: center;
   line-height: 1;
   @include transition(filter, border-color, color, background-color);
-  @include media($screen-tablet-large) {
-    padding: 13px 48px;
-    
-  }
   @include media {
     &:hover {
       filter: brightness(1.1);

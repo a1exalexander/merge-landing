@@ -6,9 +6,10 @@ $style: section-hero;
   position: relative;
   min-height: 100vh;
   @include media($screen-tablet-small) {
-    padding: 80px 0 0;
+    padding: 100px 0 0;
   }
   @include media {
+    padding: 80px 0 0;
     flex-direction: row;
     align-items: center;
   }
