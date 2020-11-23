@@ -1,7 +1,6 @@
 $style: header;
 .#{$style} {
   padding: 16px 0;
-  position: sticky;
   @include flex(space-between, center);
   position: fixed;
   background-color: $N0;
@@ -11,6 +10,7 @@ $style: header;
   z-index: 10;
   @include transition(box-shadow, background-color, padding);
   transition-duration: 0.5s;
+  min-height: initial !important;
   &._shadow {
     box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.1);
     background-color: $N0;
