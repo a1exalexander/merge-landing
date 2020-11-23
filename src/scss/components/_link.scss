@@ -6,13 +6,13 @@ $style: link;
   outline: none;
   border: none;
   background-color: transparent;
-  @include text($H16, 500, $G5);
+  @include text($H16, 500, $N13);
   line-height: 1.4;
-  @include transition(filter);
+  @include transition(filter, color);
   @include flex(center, baseline);
   display: inline-flex;
   svg {
-    @include svg(17px, $G5);
+    @include svg(16px, $N13);
     margin-left: 12px;
     position: relative;
     bottom: -2px;
@@ -29,13 +29,17 @@ $style: link;
       bottom: 0;
       width: 0;
       height: 1px;
-      @include transition(width, filter);
-      background-color: $G5;
+      @include transition(width, filter, background-color);
+      background-color: $N13;
     }
     &:hover {
-      filter: brightness(1.1);
+      color: $G5;
+      svg {
+        fill: $G5;
+      }
       &:after {
         width: 100%;
+        background-color: $G5;
       }
     }
   }

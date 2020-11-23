@@ -5,17 +5,17 @@ $style: button;
   outline: none;
   border: none;
   background-color: transparent;
-  @include text($H18, 500, $N13);
+  @include text($H16, 500, $N13);
   border-radius: 2px;
-  padding: 12px 24px;
+  padding: 13px 24px;
   display: inline-block;
   background-color: $G5;
   cursor: pointer;
   text-align: center;
-  line-height: 1.25;
+  line-height: 1;
   @include transition(filter, border-color, color, background-color);
   @include media($screen-tablet-large) {
-    padding: 16px 48px;
+    padding: 13px 48px;
     
   }
   @include media {
@@ -26,26 +26,20 @@ $style: button;
   &:active {
     filter: brightness(0.9);
   }
-  &--outlined {
+  &--outlined,
+  &--black  {
     background-color: transparent;
-    border: 1px solid $G5;
-    color: $G5;
-    padding: 12px 24px;
-  }
-  &--black {
-    border-color: $N13;
+    border: 1px solid $N13;
     color: $N13;
     @include media {
       &:hover {
-        border-color: $N13;
-        background-color: $N13;
-        color: $N0;
-      }
-      &:active {
-        filter: brightness(1);
+        border-color: $G5;
+        color: $G5;
       }
     }
-    
+    &:active {
+      filter: brightness(0.9);
+    }
   }
   &--fluid {
     width: 100%;

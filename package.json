@@ -10,11 +10,6 @@
     "build:dev": "webpack --config ./webpack/webpack.dev.js",
     "validate": "html-validate ./src/**/*.html"
   },
-  "husky": {
-    "hooks": {
-      "pre-commit": "npm run build"
-    }
-  },
   "keywords": [],
   "author": "",
   "license": "ISC",
