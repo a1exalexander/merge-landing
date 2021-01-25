@@ -59,7 +59,7 @@ $style: comments-slider;
     overflow: hidden;
   }
   &__comment {
-    @include text($H18, 400, $N10);
+    @include text($H18, 500, $N13);
     padding: 0 16px;
     line-height: 1.5;
     &._full {
