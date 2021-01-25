@@ -23,7 +23,7 @@ export class CommentsSlider {
       if (!$el.siblings().length) {
         $el.after(`<p class="comments-slider__comment _full">${$el.text()}</p>`);
       }
-      clamp(el, { clamp: 4, useNativeClamp: false });
+      clamp(el, { clamp: 4, useNativeClamp: true });
     });
   };
 
