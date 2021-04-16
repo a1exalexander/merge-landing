@@ -54,6 +54,17 @@ $style: link;
       }
     }
   }
+  &--main-color {
+    color: $G5;
+    svg {
+      fill: $G5;
+    }
+    @include media() {
+      &:after {
+        background-color: $G5;
+      }
+    }
+  }
   &--white {
     color: $N0;
     @include media() {
